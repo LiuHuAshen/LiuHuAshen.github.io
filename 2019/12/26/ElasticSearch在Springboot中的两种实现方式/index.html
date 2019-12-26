@@ -8,20 +8,17 @@
   <link rel="dns-prefetch" href="https://LiuHuAshen.github.io">
   <title>ElasticSearch在Springboot中的两种实现方式 | LHS&#39;Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、jest 使用Maven依赖 12345&lt;dependency&gt;	&lt;groupId&gt;io.searchbox&lt;&#x2F;groupId&gt;	&lt;artifactId&gt;jest&lt;&#x2F;artifactId&gt;	&lt;version&gt;5.3.3&lt;&#x2F;version&gt;&lt;&#x2F;dependency&gt; 测试 使用注解 12@Autowi">
+  <meta name="description" content="1、jest使用Maven依赖 12345&lt;dependency&gt;	&lt;groupId&gt;io.searchbox&lt;&#x2F;groupId&gt;	&lt;artifactId&gt;jest&lt;&#x2F;artifactId&gt;	&lt;version&gt;5.3.3&lt;&#x2F;version&gt;&lt;&#x2F;dependency&gt; 测试 使用注解 12@Autowir">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ElasticSearch在Springboot中的两种实现方式">
 <meta property="og:url" content="https://liuhuashen.github.io/2019/12/26/ElasticSearch%E5%9C%A8Springboot%E4%B8%AD%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/index.html">
 <meta property="og:site_name" content="LHS&#39;Blogs">
-<meta property="og:description" content="1、jest 使用Maven依赖 12345&lt;dependency&gt;	&lt;groupId&gt;io.searchbox&lt;&#x2F;groupId&gt;	&lt;artifactId&gt;jest&lt;&#x2F;artifactId&gt;	&lt;version&gt;5.3.3&lt;&#x2F;version&gt;&lt;&#x2F;dependency&gt; 测试 使用注解 12@Autowi">
+<meta property="og:description" content="1、jest使用Maven依赖 12345&lt;dependency&gt;	&lt;groupId&gt;io.searchbox&lt;&#x2F;groupId&gt;	&lt;artifactId&gt;jest&lt;&#x2F;artifactId&gt;	&lt;version&gt;5.3.3&lt;&#x2F;version&gt;&lt;&#x2F;dependency&gt; 测试 使用注解 12@Autowir">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-12-26T13:47:57.000Z">
-<meta property="article:modified_time" content="2019-12-26T14:04:35.792Z">
+<meta property="article:modified_time" content="2019-12-26T14:27:56.002Z">
 <meta property="article:author" content="LHS">
-<meta property="article:tag" content="前端">
-<meta property="article:tag" content="开发者">
-<meta property="article:tag" content="程序猿">
-<meta property="article:tag" content="Coder">
+<meta property="article:tag" content="ElasticSearch">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="LHS&#39;Blogs" type="application/atom+xml">
@@ -86,7 +83,7 @@ var _hmt = _hmt || [];
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">true</a>
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友情链接</a>
     			
             
     			
@@ -188,8 +185,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、jest</p>
-<p>使用Maven依赖</p>
+        <p>1、jest<br>使用Maven依赖</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;io.searchbox&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;jest&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;5.3.3&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 <p>测试</p>
 <p>使用注解</p>
@@ -214,6 +210,17 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ElasticSearch</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -391,7 +398,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">true</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友情链接</a></li>
       
         
       
@@ -417,6 +424,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
               </li>
             
             <div class="clearfix"></div>
