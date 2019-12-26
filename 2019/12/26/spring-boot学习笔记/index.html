@@ -6,59 +6,57 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//litten.me">
-  <title>Spring boot笔记（total) | LHS&#39;Blogs</title>
+  <title>Spring boot笔记 | LHS&#39;Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、Spring Boot 入门1、Spring Boot 简介 简化Spring应用开发的一个框架； 整个Spring技术栈的一个大整合； J2EE开发的一站式解决方案；  2、微服务2014，martin fowler 微服务：架构风格（服务微化） 一个应用应该是一组小型服务；可以通过HTTP的方式进行互通； 单体应用：ALL IN ONE 微服务：每一个功能元素最终都是一个可独立替换和独立升">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring boot笔记（total)">
-<meta property="og:url" content="2019/12/26/hello-hexo/index.html">
+<meta property="og:title" content="Spring boot笔记">
+<meta property="og:url" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="LHS&#39;Blogs">
 <meta property="og:description" content="一、Spring Boot 入门1、Spring Boot 简介 简化Spring应用开发的一个框架； 整个Spring技术栈的一个大整合； J2EE开发的一站式解决方案；  2、微服务2014，martin fowler 微服务：架构风格（服务微化） 一个应用应该是一组小型服务；可以通过HTTP的方式进行互通； 单体应用：ALL IN ONE 微服务：每一个功能元素最终都是一个可独立替换和独立升">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180129151045.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180129151112.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180129224104.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180130161620.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/concrete-bindings.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/legacy.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180131220946.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180131221411.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180203181751.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/template-engine.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/2018-02-04_123955.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180211130721.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180211134506.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180226173408.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180226180347.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180226173527.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180226180504.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180228135513.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180301142915.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180302114401.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180302144835.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180302144910.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180302221835.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180303145450.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180303145531.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180303165113.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180305194443.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180306105412.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180306145727.png">
-<meta property="og:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180306145855.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180129151045.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180129151112.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180129224104.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180130161620.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/concrete-bindings.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/legacy.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180131220946.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180131221411.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180203181751.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/template-engine.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/2018-02-04_123955.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180211130721.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180211134506.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180226173408.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180226180347.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180226173527.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180226180504.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180228135513.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180301142915.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180302114401.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180302144835.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180302144910.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180302221835.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180303145450.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180303145531.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180303165113.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180305194443.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180306105412.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180306145727.png">
+<meta property="og:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180306145855.png">
 <meta property="article:published_time" content="2019-12-26T08:39:58.000Z">
-<meta property="article:modified_time" content="2019-12-26T09:16:17.801Z">
+<meta property="article:modified_time" content="2019-12-26T12:51:06.368Z">
 <meta property="article:author" content="LHS">
-<meta property="article:tag" content="前端">
-<meta property="article:tag" content="开发者">
-<meta property="article:tag" content="程序猿">
-<meta property="article:tag" content="Coder">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="html5">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="2019/12/26/hello-hexo/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180129151045.png">
+<meta name="twitter:image" content="2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180129151045.png">
   
     <link rel="alternative" href="/atom.xml" title="LHS&#39;Blogs" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/1.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -193,19 +191,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-hexo" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-spring-boot学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Spring boot笔记（total)
+      Spring boot笔记
     </h1>
   
 
         
-        <a href="2019/12/26/hello-hexo/" target="_blank" rel="noopener" class="archive-article-date">
+        <a href="2019/12/26/spring-boot学习笔记/" target="_blank" rel="noopener" class="archive-article-date">
   	<time datetime="2019-12-26T08:39:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
 </a>
         
@@ -1453,6 +1451,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -1503,7 +1516,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:2019/12/26/hello-hexo/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:2019/12/26/spring-boot学习笔记/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -1633,6 +1646,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">html5</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -1714,7 +1735,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">LHS&lt;br&gt;&lt;br&gt;面朝大海&lt;br&gt;春暖花开</div>
   	  	
     	</section>
     
