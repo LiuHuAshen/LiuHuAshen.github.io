@@ -16,7 +16,7 @@
 <meta property="og:description" content="Spring Data :Spring 的一个子项目。用于简化数据库访问，支持NoSQL 和 关系数据存储。其主要目标是使数据库的访问变得方便快捷。 SpringData 项目所支持 NoSQL 存储：  MongoDB （文档数据库） Neo4j（图形数据库） Redis（键&#x2F;值存储） Hbase（列族数据库）  SpringData 项目所支持的关系数据存储技术：  JDBC JPA JPA">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-12-27T01:51:49.000Z">
-<meta property="article:modified_time" content="2019-12-27T01:52:20.235Z">
+<meta property="article:modified_time" content="2019-12-27T02:45:33.737Z">
 <meta property="article:author" content="LHS">
 <meta property="article:tag" content="SpringData">
 <meta name="twitter:card" content="summary">
@@ -194,7 +194,8 @@ var _hmt = _hmt || [];
 <p>比如：当有一个 UserDao.findUserById() 这样一个方法声明，我们大致应该能判断出这是根据给定条件的 ID 查询出满足条件的 User 对象，框架根据方法名也知道要做什么，Spring Data JPA 做的便是规范方法的名字，根据符合规范的名字来确定方法需要实现什么样的逻辑。</p>
 <p>SpringData JPA HelloWorld<br>使用 Spring Data JPA 进行持久层开发需要的四个步骤：</p>
 <p>配置 Spring 整合 JPA<br>笔记使用的是SpringBoot配置，配置不重要，重要的是核心内容。</p>
-<p>如果使用SpringBoot配置如下：只需要导入依赖并且填写application.yaml文件即可</p>
+<p>如果使用SpringBoot配置如下：只需要导入依赖并且填写application.yml文件即可</p>
+<a id="more"></a>
 <p>依赖：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--SpringDataJPA的依赖--&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-data-jpa&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;!--MySQL驱动的依赖--&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;mysql&lt;&#x2F;groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;mysql-connector-java&lt;&#x2F;artifactId&gt;</span><br><span class="line">	&lt;scope&gt;runtime&lt;&#x2F;scope&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
 
