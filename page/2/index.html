@@ -6,51 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://LiuHuAshen.github.io">
-  <title>Spring boot笔记 | LHS&#39;Blogs</title>
+  <title>LHS&#39;Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、Spring Boot 入门 1、Spring Boot 简介 简化Spring应用开发的一个框架； 整个Spring技术栈的一个大整合； J2EE开发的一站式解决方案；  2、微服务2014，martin fowler 微服务：架构风格（服务微化） 一个应用应该是一组小型服务；可以通过HTTP的方式进行互通； 单体应用：ALL IN ONE 微服务：每一个功能元素最终都是一个可独立替换和独">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Spring boot笔记">
-<meta property="og:url" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+  <meta name="description" content="小花生编程啦">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LHS&#39;Blogs">
+<meta property="og:url" content="https://liuhuashen.github.io/page/2/index.html">
 <meta property="og:site_name" content="LHS&#39;Blogs">
-<meta property="og:description" content="一、Spring Boot 入门 1、Spring Boot 简介 简化Spring应用开发的一个框架； 整个Spring技术栈的一个大整合； J2EE开发的一站式解决方案；  2、微服务2014，martin fowler 微服务：架构风格（服务微化） 一个应用应该是一组小型服务；可以通过HTTP的方式进行互通； 单体应用：ALL IN ONE 微服务：每一个功能元素最终都是一个可独立替换和独">
+<meta property="og:description" content="小花生编程啦">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180129151045.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180129151112.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180129224104.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180130161620.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/concrete-bindings.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/legacy.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180131220946.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180131221411.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180203181751.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/template-engine.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/2018-02-04_123955.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180211130721.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180211134506.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180226173408.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180226180347.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180226173527.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180226180504.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180228135513.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180301142915.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180302114401.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180302144835.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180302144910.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180302221835.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180303145450.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180303145531.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180303165113.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180305194443.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180306105412.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180306145727.png">
-<meta property="og:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180306145855.png">
-<meta property="article:published_time" content="2019-12-26T08:39:58.000Z">
-<meta property="article:modified_time" content="2019-12-26T14:04:37.812Z">
 <meta property="article:author" content="LHS">
-<meta property="article:tag" content="springboot">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="开发者">
+<meta property="article:tag" content="程序猿">
+<meta property="article:tag" content="Coder">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180129151045.png">
   
     <link rel="alternative" href="/atom.xml" title="LHS&#39;Blogs" type="application/atom+xml">
   
@@ -190,14 +160,106 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-spring-boot学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-ElasticSearch在Springboot中的两种实现方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Spring boot笔记
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/26/ElasticSearch%E5%9C%A8Springboot%E4%B8%AD%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/">ElasticSearch在Springboot中的两种实现方式</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/26/ElasticSearch%E5%9C%A8Springboot%E4%B8%AD%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2019-12-26T13:47:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、jest<br>使用Maven依赖</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;io.searchbox&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;jest&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;5.3.3&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>测试</p>
+<p>使用注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">JestClient jestClient;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加数据</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		User user=<span class="keyword">new</span> User();</span><br><span class="line">		user.setId(<span class="number">1</span>);</span><br><span class="line">		user.setGenter(<span class="number">1</span>);</span><br><span class="line">		user.setUserName(<span class="string">"lhs"</span>);</span><br><span class="line">		user.setAddress(<span class="string">"nanchang"</span>);</span><br><span class="line">		Index build = <span class="keyword">new</span> Index.Builder(user).index(<span class="string">"nanchang"</span>).type(<span class="string">"student"</span>).build();</span><br><span class="line"></span><br><span class="line">		jestClient.execute(build);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//进行搜索，搜索匹配到last_name为Smith的数据</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">testQuery</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		String query=<span class="string">"&#123;\n"</span> +</span><br><span class="line">				<span class="string">"    \"query\" : &#123;\n"</span> +</span><br><span class="line">				<span class="string">"        \"match\" : &#123;\n"</span> +</span><br><span class="line">				<span class="string">"            \"last_name\" : \"Smith\"\n"</span> +</span><br><span class="line">				<span class="string">"        &#125;\n"</span> +</span><br><span class="line">				<span class="string">"    &#125;\n"</span> +</span><br><span class="line">				<span class="string">"&#125;"</span>;</span><br><span class="line">		Search build = <span class="keyword">new</span> Search.Builder(query).addIndex(<span class="string">"nanchang"</span>).addType(<span class="string">"student"</span>).build();</span><br><span class="line"></span><br><span class="line">		SearchResult execute = jestClient.execute(build);</span><br><span class="line"></span><br><span class="line">		System.out.println(execute);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>2、使用spring-boot-starter-data-elasticsearch实现</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-data-elasticsearch&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>实现接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">BookRepository</span> <span class="keyword">extends</span> <span class="title">ElasticsearchRepository</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span>  List&lt;Book&gt; <span class="title">findByBookNameLike</span><span class="params">(String bookName)</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	BookRepository bookRepository;</span><br><span class="line"><span class="comment">//添加数据</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">addElasticSearch</span><span class="params">()</span></span>&#123;</span><br><span class="line">	    Book book=<span class="keyword">new</span> Book();</span><br><span class="line">	   <span class="comment">/* book.setBookId(1);</span></span><br><span class="line"><span class="comment">	    book.setBookName("三国演义");</span></span><br><span class="line"><span class="comment">        book.setBookNo(10);*/</span></span><br><span class="line">        bookRepository.index(book);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//查找</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">searchBook</span><span class="params">()</span></span>&#123;</span><br><span class="line">        List&lt;Book&gt; listBook = bookRepository.findByBookNameLike(<span class="string">"三"</span>);</span><br><span class="line">        <span class="keyword">for</span>(Book book1:listBook)&#123;</span><br><span class="line">            System.out.println(book1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ElasticSearch</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/26/ElasticSearch%E5%9C%A8Springboot%E4%B8%AD%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring-boot学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Spring boot笔记</a>
     </h1>
   
 
@@ -1426,37 +1488,6 @@ var _hmt = _hmt || [];
       
 
       
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/1.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/2.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
     </div>
     <div class="article-info article-info-index">
       
@@ -1475,79 +1506,16 @@ var _hmt = _hmt || [];
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://liuhuashen.github.io/2019/12/26/spring-boot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/12/26/ElasticSearch%E5%9C%A8Springboot%E4%B8%AD%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          ElasticSearch在Springboot中的两种实现方式
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -1567,24 +1535,12 @@ var _hmt = _hmt || [];
 
 
 
-  
-  
-  
 
   
-  <div id="SOHUCS" sid="spring-boot学习笔记" ></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: "cysX3aGWt",
-        conf: "prod_1dcda447175aada96edcdb7e412338fa"
-    });
-</script>
-</script>
   
-
-  
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -1607,8 +1563,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
