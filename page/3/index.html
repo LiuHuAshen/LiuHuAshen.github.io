@@ -158,6 +158,96 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ElasticSearch在Springboot中的两种实现方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/26/ElasticSearch%E5%9C%A8Springboot%E4%B8%AD%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/">ElasticSearch在Springboot中的两种实现方式</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/26/ElasticSearch%E5%9C%A8Springboot%E4%B8%AD%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2019-12-26T13:47:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、jest<br>使用Maven依赖</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;io.searchbox&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;jest&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;5.3.3&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>测试</p>
+<p>使用注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">JestClient jestClient;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加数据</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		User user=<span class="keyword">new</span> User();</span><br><span class="line">		user.setId(<span class="number">1</span>);</span><br><span class="line">		user.setGenter(<span class="number">1</span>);</span><br><span class="line">		user.setUserName(<span class="string">"lhs"</span>);</span><br><span class="line">		user.setAddress(<span class="string">"nanchang"</span>);</span><br><span class="line">		Index build = <span class="keyword">new</span> Index.Builder(user).index(<span class="string">"nanchang"</span>).type(<span class="string">"student"</span>).build();</span><br><span class="line"></span><br><span class="line">		jestClient.execute(build);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//进行搜索，搜索匹配到last_name为Smith的数据</span></span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">testQuery</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		String query=<span class="string">"&#123;\n"</span> +</span><br><span class="line">				<span class="string">"    \"query\" : &#123;\n"</span> +</span><br><span class="line">				<span class="string">"        \"match\" : &#123;\n"</span> +</span><br><span class="line">				<span class="string">"            \"last_name\" : \"Smith\"\n"</span> +</span><br><span class="line">				<span class="string">"        &#125;\n"</span> +</span><br><span class="line">				<span class="string">"    &#125;\n"</span> +</span><br><span class="line">				<span class="string">"&#125;"</span>;</span><br><span class="line">		Search build = <span class="keyword">new</span> Search.Builder(query).addIndex(<span class="string">"nanchang"</span>).addType(<span class="string">"student"</span>).build();</span><br><span class="line"></span><br><span class="line">		SearchResult execute = jestClient.execute(build);</span><br><span class="line"></span><br><span class="line">		System.out.println(execute);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>2、使用spring-boot-starter-data-elasticsearch实现</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-data-elasticsearch&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>实现接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">BookRepository</span> <span class="keyword">extends</span> <span class="title">ElasticsearchRepository</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">     <span class="function"><span class="keyword">public</span>  List&lt;Book&gt; <span class="title">findByBookNameLike</span><span class="params">(String bookName)</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	BookRepository bookRepository;</span><br><span class="line"><span class="comment">//添加数据</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">addElasticSearch</span><span class="params">()</span></span>&#123;</span><br><span class="line">	    Book book=<span class="keyword">new</span> Book();</span><br><span class="line">	   <span class="comment">/* book.setBookId(1);</span></span><br><span class="line"><span class="comment">	    book.setBookName("三国演义");</span></span><br><span class="line"><span class="comment">        book.setBookNo(10);*/</span></span><br><span class="line">        bookRepository.index(book);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//查找</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">searchBook</span><span class="params">()</span></span>&#123;</span><br><span class="line">        List&lt;Book&gt; listBook = bookRepository.findByBookNameLike(<span class="string">"三"</span>);</span><br><span class="line">        <span class="keyword">for</span>(Book book1:listBook)&#123;</span><br><span class="line">            System.out.println(book1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ElasticSearch</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/26/ElasticSearch%E5%9C%A8Springboot%E4%B8%AD%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-spring-boot学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1589,6 +1679,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据备份</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
             
             <div class="clearfix"></div>
