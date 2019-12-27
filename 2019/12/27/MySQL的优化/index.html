@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://LiuHuAshen.github.io">
   <title>MySQL的优化 | LHS&#39;Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在学习MySQL的优化时，在Githup上发现一篇好的MySQL学习资料，在这转载一下，希望能够帮到大家。 本文概要 概述为什么要优化 系统的吞吐量瓶颈往往出现在数据库的访问速度上  随着应用程序的运行，数据库的中的数据会越来越多，处理时间会相应变慢  数据是存放在磁盘上的，读写速度无法和内存相比">
+  <meta name="description" content="本文概要 概述为什么要优化 系统的吞吐量瓶颈往往出现在数据库的访问速度上  随着应用程序的运行，数据库的中的数据会越来越多，处理时间会相应变慢  数据是存放在磁盘上的，读写速度无法和内存相比">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL的优化">
 <meta property="og:url" content="https://liuhuashen.github.io/2019/12/27/MySQL%E7%9A%84%E4%BC%98%E5%8C%96/index.html">
 <meta property="og:site_name" content="LHS&#39;Blogs">
-<meta property="og:description" content="在学习MySQL的优化时，在Githup上发现一篇好的MySQL学习资料，在这转载一下，希望能够帮到大家。 本文概要 概述为什么要优化 系统的吞吐量瓶颈往往出现在数据库的访问速度上  随着应用程序的运行，数据库的中的数据会越来越多，处理时间会相应变慢  数据是存放在磁盘上的，读写速度无法和内存相比">
+<meta property="og:description" content="本文概要 概述为什么要优化 系统的吞吐量瓶颈往往出现在数据库的访问速度上  随着应用程序的运行，数据库的中的数据会越来越多，处理时间会相应变慢  数据是存放在磁盘上的，读写速度无法和内存相比">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cDovL3phbndlbmJsb2cub3NzLWNuLWJlaWppbmcuYWxpeXVuY3MuY29tLzE4LTEyLTMwLzUzNTM1NDE5LmpwZw?x-oss-process=image/format,png">
 <meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cDovL3phbndlbmJsb2cub3NzLWNuLWJlaWppbmcuYWxpeXVuY3MuY29tLzE4LTEyLTI2LzUxNDU3MjQ2LmpwZw?x-oss-process=image/format,png">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cDovL3phbndlbmJsb2cub3NzLWNuLWJlaWppbmcuYWxpeXVuY3MuY29tLzE4LTEyLTI5LzM3MTYyNTQ3LmpwZw?x-oss-process=image/format,png">
 <meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cDovL3phbndlbmJsb2cub3NzLWNuLWJlaWppbmcuYWxpeXVuY3MuY29tLzE4LTEyLTI5LzcxNzQ3MTM3LmpwZw?x-oss-process=image/format,png">
 <meta property="article:published_time" content="2019-12-27T02:38:43.000Z">
-<meta property="article:modified_time" content="2019-12-27T02:41:18.511Z">
+<meta property="article:modified_time" content="2019-12-27T02:53:41.497Z">
 <meta property="article:author" content="LHS">
 <meta property="article:tag" content="Mysql">
 <meta name="twitter:card" content="summary">
@@ -194,8 +194,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>在学习MySQL的优化时，在Githup上发现一篇好的MySQL学习资料，在这转载一下，希望能够帮到大家。</strong></p>
-<h1 id="本文概要"><a href="#本文概要" class="headerlink" title="本文概要"></a>本文概要</h1><p><img src="https://imgconvert.csdnimg.cn/aHR0cDovL3phbndlbmJsb2cub3NzLWNuLWJlaWppbmcuYWxpeXVuY3MuY29tLzE4LTEyLTMwLzUzNTM1NDE5LmpwZw?x-oss-process=image/format,png" alt=""></p>
+        <h1 id="本文概要"><a href="#本文概要" class="headerlink" title="本文概要"></a>本文概要</h1><p><img src="https://imgconvert.csdnimg.cn/aHR0cDovL3phbndlbmJsb2cub3NzLWNuLWJlaWppbmcuYWxpeXVuY3MuY29tLzE4LTEyLTMwLzUzNTM1NDE5LmpwZw?x-oss-process=image/format,png" alt=""></p>
 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="为什么要优化"><a href="#为什么要优化" class="headerlink" title="为什么要优化"></a>为什么要优化</h2><ul>
 <li><p>系统的吞吐量瓶颈往往出现在数据库的访问速度上</p>
 </li>
