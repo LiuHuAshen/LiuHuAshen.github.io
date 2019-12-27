@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://LiuHuAshen.github.io">
-  <title>Archives: 2019 | LHS&#39;Blogs</title>
+  <title>服务器当中数据库的备份 | LHS&#39;Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小花生编程啦">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LHS&#39;Blogs">
-<meta property="og:url" content="https://liuhuashen.github.io/archives/2019/page/2/index.html">
+  <meta name="description" content="一：找到Mysql所在位置 1whereis mysql 二：进入到mysql的位置 1cd &#x2F;usr&#x2F;bin  三、导出数据1.导出表和结构 1mysqldump -uroot -proot --set-gtid-purged&#x3D;OFF halodb  &gt; ~&#x2F;halodb.sql 2.只导出结构 1mysqldump -u用户名 -p密码 -d 数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器当中数据库的备份">
+<meta property="og:url" content="https://liuhuashen.github.io/2019/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BD%93%E4%B8%AD%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD/index.html">
 <meta property="og:site_name" content="LHS&#39;Blogs">
-<meta property="og:description" content="小花生编程啦">
+<meta property="og:description" content="一：找到Mysql所在位置 1whereis mysql 二：进入到mysql的位置 1cd &#x2F;usr&#x2F;bin  三、导出数据1.导出表和结构 1mysqldump -uroot -proot --set-gtid-purged&#x3D;OFF halodb  &gt; ~&#x2F;halodb.sql 2.只导出结构 1mysqldump -u用户名 -p密码 -d 数据">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-27T01:53:33.000Z">
+<meta property="article:modified_time" content="2019-12-27T01:54:06.059Z">
 <meta property="article:author" content="LHS">
-<meta property="article:tag" content="前端">
-<meta property="article:tag" content="开发者">
-<meta property="article:tag" content="程序猿">
-<meta property="article:tag" content="Coder">
+<meta property="article:tag" content="服务器">
+<meta property="article:tag" content="数据备份">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="LHS&#39;Blogs" type="application/atom+xml">
@@ -160,413 +160,199 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-服务器当中数据库的备份" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/27/Rabbitmq%E7%9A%84%E5%87%A0%E7%A7%8D%E4%BA%A4%E6%8D%A2%E6%9C%BA%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2019-12-27T01:38:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/27/Rabbitmq%E7%9A%84%E5%87%A0%E7%A7%8D%E4%BA%A4%E6%8D%A2%E6%9C%BA%E6%A8%A1%E5%BC%8F/">Rabbitmq的几种交换机模式</a>
+    <h1 class="article-title" itemprop="name">
+      服务器当中数据库的备份
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BD%93%E4%B8%AD%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD/" class="archive-article-date">
+  	<time datetime="2019-12-27T01:53:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一：找到Mysql所在位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis mysql</span><br></pre></td></tr></table></figure>
+<p>二：进入到mysql的位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;usr&#x2F;bin</span><br></pre></td></tr></table></figure>
+
+<p>三、导出数据<br>1.导出表和结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -proot --set-gtid-purged&#x3D;OFF halodb  &gt; ~&#x2F;halodb.sql</span><br></pre></td></tr></table></figure>
+<p>2.只导出结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u用户名 -p密码 -d 数据库名 &gt; 数据库名.sql</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/1.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/2.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">RabbitMq</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/27/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85RabbitMQ/" class="archive-article-date">
-  	<time datetime="2019-12-27T01:38:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/27/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85RabbitMQ/">使用docker安装RabbitMQ</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">RabbitMq</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">服务器</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据备份</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://liuhuashen.github.io/2019/12/27/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BD%93%E4%B8%AD%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%A4%87%E4%BB%BD/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/27/Springboot%E4%B8%AD%E7%9A%84%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" class="archive-article-date">
-  	<time datetime="2019-12-27T01:36:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/27/Redis%E4%B8%BA%E4%BB%80%E4%B9%88%E9%82%A3%E4%B9%88%E5%BF%AB%EF%BC%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Redis为什么那么快？</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/27/Springboot%E4%B8%AD%E7%9A%84%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">Springboot中的定时任务</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">定时任务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/27/ElasticSearch/" class="archive-article-date">
-  	<time datetime="2019-12-27T01:35:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/27/ElasticSearch/">ElasticSearch</a>
-    </h1>
+  <div id="SOHUCS" sid="服务器当中数据库的备份" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cysX3aGWt",
+        conf: "prod_1dcda447175aada96edcdb7e412338fa"
+    });
+</script>
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ElasticSearch</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/27/Springboot%E7%9A%84%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1/" class="archive-article-date">
-  	<time datetime="2019-12-27T01:33:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/27/Springboot%E7%9A%84%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1/">Springboot的邮件服务</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/27/SpringSecurity%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2019-12-27T01:32:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/27/SpringSecurity%E7%9A%84%E4%BD%BF%E7%94%A8/">SpringSecurity的使用</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SpringSecurity</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/27/Springboot%E7%9A%84%E5%BC%80%E5%8F%91%E7%83%AD%E9%83%A8%E7%BD%B2/" class="archive-article-date">
-  	<time datetime="2019-12-27T01:31:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/27/Springboot%E7%9A%84%E5%BC%80%E5%8F%91%E7%83%AD%E9%83%A8%E7%BD%B2/">Springboot的开发热部署</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/27/%E6%80%8E%E4%B9%88%E8%AE%A9spingboot%E9%A1%B9%E7%9B%AE%E6%B0%B8%E4%B9%85%E6%8C%82%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD/" class="archive-article-date">
-  	<time datetime="2019-12-27T01:30:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/27/%E6%80%8E%E4%B9%88%E8%AE%A9spingboot%E9%A1%B9%E7%9B%AE%E6%B0%B8%E4%B9%85%E6%8C%82%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD/">怎么让spingboot项目永久挂在服务器中</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%92%8C%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E7%9A%84%E6%A6%82%E5%BF%B5/" class="archive-article-date">
-  	<time datetime="2019-12-26T14:43:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%92%8C%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E7%9A%84%E6%A6%82%E5%BF%B5/">微服务和微服务架构的概念</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/26/ElasticSearch%E5%9C%A8Springboot%E4%B8%AD%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2019-12-26T13:47:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/26/ElasticSearch%E5%9C%A8Springboot%E4%B8%AD%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/">ElasticSearch在Springboot中的两种实现方式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ElasticSearch</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2019/page/3/">3</a><a class="extend next" rel="next" href="/archives/2019/page/3/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -590,8 +376,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
