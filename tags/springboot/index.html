@@ -289,7 +289,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -576,35 +576,6 @@
   </div>
 
   
-<script type="text/javascript" src="/plugins/TweenMax/TweenMax.min.js"></script>
-<script type="text/javascript" src="/plugins/TweenMax/HoverImg.js"></script>
-
-<script>
-
-
-  var hoverEffect = {
-    "subNav": ".left-col .social a"
-  }
-
-
-  for (var x in hoverEffect) {
-    // 初始化data-img属性值
-    let $em = document.querySelectorAll(hoverEffect[x]);
-    $em.forEach(($a) => {
-      //console.log($a.href);
-      if (isImageType($a.href)) {
-        $a.setAttribute("data-img", $a.href)
-      }
-    })
-    // 实现悬停元素预览图片效果
-    let $a = document.querySelectorAll(hoverEffect[x] + "[data-img]");
-    $a.forEach(($em) => {
-      new HoverImgFx1($em)
-    })
-  }
-
-</script>
-
   
 <script type="text/javascript" src="/plugins/activate-power-mode/activate-power-mode.js"></script>
 <script>
@@ -681,6 +652,27 @@
 </body>
 
 </html>
+">LHS<br><br>面朝大海<br>春暖花开</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
             <div class="pswp__item"></div>
             <div class="pswp__item"></div>
             <div class="pswp__item"></div>
@@ -736,35 +728,6 @@
   </div>
 
   
-<script type="text/javascript" src="/plugins/TweenMax/TweenMax.min.js"></script>
-<script type="text/javascript" src="/plugins/TweenMax/HoverImg.js"></script>
-
-<script>
-
-
-  var hoverEffect = {
-    "subNav": ".left-col .social a"
-  }
-
-
-  for (var x in hoverEffect) {
-    // 初始化data-img属性值
-    let $em = document.querySelectorAll(hoverEffect[x]);
-    $em.forEach(($a) => {
-      //console.log($a.href);
-      if (isImageType($a.href)) {
-        $a.setAttribute("data-img", $a.href)
-      }
-    })
-    // 实现悬停元素预览图片效果
-    let $a = document.querySelectorAll(hoverEffect[x] + "[data-img]");
-    $a.forEach(($em) => {
-      new HoverImgFx1($em)
-    })
-  }
-
-</script>
-
   
 <script type="text/javascript" src="/plugins/activate-power-mode/activate-power-mode.js"></script>
 <script>
