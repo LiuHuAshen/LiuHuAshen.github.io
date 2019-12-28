@@ -593,66 +593,9 @@
 
   
   
-<script type="text/javascript" src="/plugins/activate-power-mode/activate-power-mode.js"></script>
-<script>
-  POWERMODE.colorful = true; // make power mode colorful
-  POWERMODE.shake = false; // turn off shake
-  document.body.addEventListener('input', POWERMODE);
-</script>
-
   
   <!-- <script async type="text/javascript" size="90" alpha="0.2" zIndex="0" src="/plugins/ribbon.js/ribbon.min.js"></script> -->
   
-  
-    <script type="text/javascript" src="/plugins/live2d-widget.js/L2Dwidget.min.js"></script>
-<script type="text/javascript">
-  /**
-   * 完整配置请参考：https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
-   */
-  var pluginModelPath = "assets/", // 模型的文件路径，无需更改
-    pluginRootPath = "/live2d_models/"; // 插件的路径，无需更改
-  //特定的模型json文件名称
-  var modelPathJson = {
-    "epsilon2_1": "Epsilon2.1",
-    "gf": "Gantzert_Felixander",
-    "haru/01": "haru01",
-    "haru/02": "haru02",
-    "nietzsche": "nietzche"
-  }
-
-  
-    var modelName = "hibiki";
-  
-
-  var modelJsonPath = "";
-  if (modelPathJson[modelName]) {
-    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelPathJson[modelName] +
-      ".model.json";
-  } else {
-    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelName + ".model.json";
-  }
-  L2Dwidget.init({
-    model: {
-      jsonPath: modelJsonPath
-    },
-    display: {
-       position: "right", 
-       width: 145, 
-       height: 315, 
-       hOffset: 50, 
-      
-    },
-    mobile: {
-       show: false, 
-       scale: 0.6 
-    },
-    react: {
-       opacity: 0.8 
-    }
-  })
-
-</script>
-
   
   
   <script type="text/javascript" src="/lib/snow.js"></script>
@@ -668,7 +611,57 @@
 </body>
 
 </html>
-="_blank" class="search-title" >
+ontent: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="/" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                南昌大学图书馆
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="/" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                Docker
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="/" target="_blank" class="search-title" >
                 
                   <i class="icon-link icon"></i>
                 
@@ -771,66 +764,9 @@
 
   
   
-<script type="text/javascript" src="/plugins/activate-power-mode/activate-power-mode.js"></script>
-<script>
-  POWERMODE.colorful = true; // make power mode colorful
-  POWERMODE.shake = false; // turn off shake
-  document.body.addEventListener('input', POWERMODE);
-</script>
-
   
   <!-- <script async type="text/javascript" size="90" alpha="0.2" zIndex="0" src="/plugins/ribbon.js/ribbon.min.js"></script> -->
   
-  
-    <script type="text/javascript" src="/plugins/live2d-widget.js/L2Dwidget.min.js"></script>
-<script type="text/javascript">
-  /**
-   * 完整配置请参考：https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
-   */
-  var pluginModelPath = "assets/", // 模型的文件路径，无需更改
-    pluginRootPath = "/live2d_models/"; // 插件的路径，无需更改
-  //特定的模型json文件名称
-  var modelPathJson = {
-    "epsilon2_1": "Epsilon2.1",
-    "gf": "Gantzert_Felixander",
-    "haru/01": "haru01",
-    "haru/02": "haru02",
-    "nietzsche": "nietzche"
-  }
-
-  
-    var modelName = "hibiki";
-  
-
-  var modelJsonPath = "";
-  if (modelPathJson[modelName]) {
-    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelPathJson[modelName] +
-      ".model.json";
-  } else {
-    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelName + ".model.json";
-  }
-  L2Dwidget.init({
-    model: {
-      jsonPath: modelJsonPath
-    },
-    display: {
-       position: "right", 
-       width: 145, 
-       height: 315, 
-       hOffset: 50, 
-      
-    },
-    mobile: {
-       show: false, 
-       scale: 0.6 
-    },
-    react: {
-       opacity: 0.8 
-    }
-  })
-
-</script>
-
   
   
   <script type="text/javascript" src="/lib/snow.js"></script>
