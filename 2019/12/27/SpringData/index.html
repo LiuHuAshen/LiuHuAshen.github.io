@@ -48,7 +48,26 @@
   
   
 
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
 
+</script>
+
+
+
+  
+    <script src="/lib/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
   
 
 </head>
@@ -111,6 +130,18 @@
 					<a class="cnblog" href="#" title="博客园" ><i class="icon-cnblog"></i></a>
 				
 			</div>
+		
+			
+			
+			
+			
+			<div>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=1334445174&auto=1&height=66"></iframe>
+			</div>
+			
+				
+				<p style="font-size: 12px;">这似乎是首纯音乐，请尽情的欣赏它吧！<p>
+			
 		
 		</nav>
 	</header>		
@@ -219,7 +250,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">3.4k字</span>
+      <span class="post-count">3.3k字</span>
     </span>
   </span>
 
@@ -228,7 +259,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">14分</span>
+      <span class="post-count">13分</span>
     </span>
   </span>
 </div>
@@ -261,31 +292,29 @@
 <p>如果使用SpringBoot配置如下：只需要导入依赖并且填写application.yml文件即可</p>
 <a id="more"></a>
 <p>依赖：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--SpringDataJPA的依赖--&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-data-jpa&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;!--MySQL驱动的依赖--&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;mysql&lt;&#x2F;groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;mysql-connector-java&lt;&#x2F;artifactId&gt;</span><br><span class="line">	&lt;scope&gt;runtime&lt;&#x2F;scope&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--SpringDataJPA的依赖--&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;!--MySQL驱动的依赖--&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">	&lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 
 <p>配置文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.username&#x3D;root</span><br><span class="line">spring.datasource.password&#x3D;root</span><br><span class="line">spring.datasource.url&#x3D;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;springdatajpa?serverTimezone&#x3D;Asia&#x2F;Shanghai</span><br><span class="line">spring.datasource.driver-class-name&#x3D;com.mysql.cj.jdbc.Driver</span><br><span class="line">spring.jpa.hibernate.ddl-auto&#x3D;update</span><br><span class="line">spring.jpa.generate-ddl&#x3D;true</span><br><span class="line">spring.jpa.show-sql&#x3D;true</span><br><span class="line">spring.jpa.database-platform&#x3D;org.hibernate.dialect.MySQL8Dialect</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=root</span><br><span class="line">spring.datasource.url=jdbc:mysql://localhost:3306/springdatajpa?serverTimezone=Asia/Shanghai</span><br><span class="line">spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</span><br><span class="line">spring.jpa.hibernate.ddl-auto=update</span><br><span class="line">spring.jpa.generate-ddl=true</span><br><span class="line">spring.jpa.show-sql=true</span><br><span class="line">spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect</span><br></pre></td></tr></table></figure>
+
 <p>注意，如果配置文件中不添加：</p>
 <p>spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect</p>
 <p>则会造成下面的情况，注意下面的SQL语句创建的是MyISAM引擎的数据表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hibernate: create table cst_customer (cust_id bigint not null auto_increment, cust_address varchar(255), cust_industry varchar(255), cust_level varchar(255), cust_name varchar(255), cust_phone varchar(255), cust_source varchar(255), primary key (cust_id)) engine&#x3D;MyISAM</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hibernate: create table cst_customer (cust_id bigint not null auto_increment, cust_address varchar(255), cust_industry varchar(255), cust_level varchar(255), cust_name varchar(255), cust_phone varchar(255), cust_source varchar(255), primary key (cust_id)) engine=MyISAM</span><br></pre></td></tr></table></figure>
 
 <p>添加spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect后，就变成了InnoDB引擎:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hibernate: create table cst_customer (cust_id bigint not null auto_increment, cust_address varchar(255), cust_industry varchar(255), cust_level varchar(255), cust_name varchar(255), cust_phone varchar(255), cust_source varchar(255), primary key (cust_id)) engine&#x3D;InnoDB</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hibernate: create table cst_customer (cust_id bigint not null auto_increment, cust_address varchar(255), cust_industry varchar(255), cust_level varchar(255), cust_name varchar(255), cust_phone varchar(255), cust_source varchar(255), primary key (cust_id)) engine=InnoDB</span><br></pre></td></tr></table></figure>
 
 <p>spring.jpa.database-platform配置的是数据库的方言</p>
 <p>以下是原生方式搭建SpringDataJPA，可以跳到开始开发</p>
 <p>如果使用默认的Spring配置文件的方式，需要先掌握一些JPA的配置规范，百度上到处都有教程，大致步骤如下：</p>
 <p>搭建环境：</p>
 <p>同时下载 Spring Data Commons 和 Spring Data JPA 两个发布包：<br>Commons 是 Spring Data 的基础包<br>并把相关的依赖 JAR 文件加入到 CLASSPATH 中</p>
-<p>在Spring 配置文件中配置 Spring Data，让 Spring为声明的接口创建代理对象。配置了<a href="jpa:repositories">jpa:repositories</a>后，Spring 初始化容器时将会扫描 base-package 指定的包目录及其子目录，为继承 Repository 或其子接口的接口创建代理对象，并将代理对象注册为 Spring Bean，业务层便可以通过 Spring自动封装的特性来直接使用该对象。</p>
+<p>在Spring 配置文件中配置 Spring Data，让 Spring为声明的接口创建代理对象。配置了<a href="jpa:repositories" target="_blank" rel="noopener">jpa:repositories</a>后，Spring 初始化容器时将会扫描 base-package 指定的包目录及其子目录，为继承 Repository 或其子接口的接口创建代理对象，并将代理对象注册为 Spring Bean，业务层便可以通过 Spring自动封装的特性来直接使用该对象。</p>
 <p>声明持久层的接口，该接口继承 Repository，Repository是一个标记型接口，它不包含任何方法，如必要，Spring Data 可实现 Repository 其他子接口（通常我们也是实现其他接口），其中定义了一些常用的增删改查，以及分页相关的方法。</p>
 <p>在接口中声明需要的方法。Spring Data 将根据给定的策略（具体策略稍后讲解）来为其生成实现代码。</p>
 <p>开始开发<br>写一个实体类</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package com.example.application.model;</span><br><span class="line">import lombok.Data;</span><br><span class="line">import javax.persistence.*;</span><br><span class="line">@Entity</span><br><span class="line">@Table(name &#x3D; &quot;cst_customer&quot;)</span><br><span class="line">@Data</span><br><span class="line">public class Customer &#123;</span><br><span class="line">    @Id</span><br><span class="line">    @GeneratedValue(strategy &#x3D; GenerationType.IDENTITY)</span><br><span class="line">    @Column(name &#x3D; &quot;cust_id&quot;)</span><br><span class="line">    private Long custId;</span><br><span class="line">    @Column(name &#x3D; &quot;cust_address&quot;)</span><br><span class="line">    private String custAddress;</span><br><span class="line">    @Column(name &#x3D; &quot;cust_industry&quot;)</span><br><span class="line">    private String custIndustry;</span><br><span class="line">    @Column(name &#x3D; &quot;cust_level&quot;)</span><br><span class="line">    private String custLevel;</span><br><span class="line">    @Column(name &#x3D; &quot;cust_name&quot;)</span><br><span class="line">    private String custName;</span><br><span class="line">    @Column(name &#x3D; &quot;cust_phone&quot;)</span><br><span class="line">    private String custPhone;</span><br><span class="line">    @Column(name &#x3D; &quot;cust_source&quot;)</span><br><span class="line">    private String custSource;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package com.example.application.model;</span><br><span class="line">import lombok.Data;</span><br><span class="line">import javax.persistence.*;</span><br><span class="line">@Entity</span><br><span class="line">@Table(name = &quot;cst_customer&quot;)</span><br><span class="line">@Data</span><br><span class="line">public class Customer &#123;</span><br><span class="line">    @Id</span><br><span class="line">    @GeneratedValue(strategy = GenerationType.IDENTITY)</span><br><span class="line">    @Column(name = &quot;cust_id&quot;)</span><br><span class="line">    private Long custId;</span><br><span class="line">    @Column(name = &quot;cust_address&quot;)</span><br><span class="line">    private String custAddress;</span><br><span class="line">    @Column(name = &quot;cust_industry&quot;)</span><br><span class="line">    private String custIndustry;</span><br><span class="line">    @Column(name = &quot;cust_level&quot;)</span><br><span class="line">    private String custLevel;</span><br><span class="line">    @Column(name = &quot;cust_name&quot;)</span><br><span class="line">    private String custName;</span><br><span class="line">    @Column(name = &quot;cust_phone&quot;)</span><br><span class="line">    private String custPhone;</span><br><span class="line">    @Column(name = &quot;cust_source&quot;)</span><br><span class="line">    private String custSource;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这个实体类使用了Lombok</p>
 <p>类上面的注解解释</p>
@@ -298,14 +327,12 @@
 <p>写一个Repository接口</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">package com.example.application.repository;</span><br><span class="line">import com.example.application.model.Customer;</span><br><span class="line">import org.springframework.data.jpa.repository.JpaRepository;</span><br><span class="line">import org.springframework.data.jpa.repository.JpaSpecificationExecutor;</span><br><span class="line">public interface CustomerRepository extends JpaRepository&lt;Customer, Long&gt;, JpaSpecificationExecutor&lt;Customer&gt; &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
 <p>上面的Repository接口继承了两个接口JpaRepository和JpaSpecificationExecutor</p>
 <p>这两个接口中都定义了很多的方法，接口上要规定泛型</p>
 <p>T：表示该Repository要操作的实体类的类型</p>
 <p>ID：表示该Repository控制的实体类的ID是什么类型</p>
 <p>Repository接口的解释<br>Repository 接口是 Spring Data 的一个核心接口，它不提供任何方法，开发者需要在自己定义的接口中声明需要的方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">package org.springframework.data.repository;</span><br><span class="line">import org.springframework.stereotype.Indexed;</span><br><span class="line">@Indexed</span><br><span class="line">public interface Repository&lt;T, ID&gt; &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 
 <p>Spring Data可以让我们只定义接口，只要遵循 Spring Data的规范，就无需写实现类。</p>
 <p>与继承Repository等价的一种方式，就是在持久层接口上使用@RepositoryDefinition 注解，并为其指定 domainClass 和 idClass 属性。</p>
@@ -329,7 +356,7 @@
 <p>从右往左截取第一个大写字母开头的字符串(此处为Uuid)，然后检查剩下的字符串是否为查询实体的一个属性，如果是，则表示根据该属性进行查询；如果没有该属性，则重复第二步，继续从右往左截取；最后假设 user 为查询实体的一个属性；</p>
 <p>接着处理剩下部分（DepUuid），先判断 user 所对应的类型是否有depUuid属性，如果有，则表示该方法最终是根据 “ Doc.user.depUuid” 的取值进行查询；否则继续按照步骤 2 的规则从右往左截取，最终表示根据 “Doc.user.dep.uuid” 的值进行查询。</p>
 <p>可能会存在一种特殊情况，比如 Doc包含一个 user 的属性，也有一个 userDep 属性，此时会存在混淆。可以明确在属性之间加上 “_” 以显式表达意图，比如 “findByUser_DepUuid()” 或者 “findByUserDep_uuid()” 特殊的参数： 还可以直接在方法的参数上加入分页或排序的参数，比如：</p>
-<p>Page<UserModel> findByName(String name, Pageable pageable);<br>List<UserModel> findByName(String name, Sort sort);</p>
+<p>Page<usermodel> findByName(String name, Pageable pageable);<br>List<usermodel> findByName(String name, Sort sort);</usermodel></usermodel></p>
 <p>使用 @Query 注解<br>这种查询可以声明在 Repository 方法中，摆脱像命名查询那样的约束，将查询直接在相应的接口方法中声明，结构更为清晰，这是 Spring data 的特有实现。</p>
 <p>上面的代码使用的是JPQL语法，下面会说。</p>
 <p>上面的?1是一个参数占位符，对于参数占位符来说，有索引参数和命名参数</p>
@@ -339,26 +366,24 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Query(&quot;select o from UserModel o where o.name like ?1%&quot;)</span><br><span class="line">public List&lt;UserModel&gt; findByUuidOrAge(String name);</span><br><span class="line">@Query(&quot;select o from UserModel o where o.name like %?1&quot;)</span><br><span class="line">public List&lt;UserModel&gt; findByUuidOrAge(String name);</span><br><span class="line">@Query(&quot;select o from UserModel o where o.name like %?1%&quot;)</span><br><span class="line">public List&lt;UserModel&gt; findByUuidOrAge(String name);</span><br></pre></td></tr></table></figure>
 
 <p>重点：还可以使用@Query来指定本地查询，只要设置nativeQuery为true，比如：</p>
-<p>@Query(value=”select * from tbl_user where name like %?1” ,nativeQuery=true)<br>public List<UserModel> findByUuidOrAge(String name);</p>
+<p>@Query(value=”select * from tbl_user where name like %?1” ,nativeQuery=true)<br>public List<usermodel> findByUuidOrAge(String name);</usermodel></p>
 <p>@Modifying 注解和事务<br>@Query 与 @Modifying 这两个 annotation一起声明，可定义个性化更新操作，例如只涉及某些字段更新时最为常用，示例如下：</p>
 <p>注意： 方法的返回值应该是 int，表示更新语句所影响的行数 在调用的地方必须加事务，没有事务不能正常执行</p>
 <p>事务<br>Spring Data提供了默认的事务处理方式，即所有的查询均声明为只读事务。</p>
 <p>对于自定义的方法，如需改变 Spring Data 提供的事务默认方式，可以在方法上注解 @Transactional 声明</p>
 <p>进行多个 Repository 操作时，也应该使它们在同一个事务中处理，按照分层架构的思想，这部分属于业务逻辑层，因此，需要在 Service 层实现对多个 Repository 的调用，并在相应的方法上声明事务。</p>
 <p>对于Repository接口的具体说明<br>CrudRepository 接口提供了最基本的对实体类的添删改查操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">T save(T entity);&#x2F;&#x2F;保存单个实体</span><br><span class="line">Iterable save(Iterable&lt;? extends T&gt; entities);&#x2F;&#x2F;保存集合</span><br><span class="line">T findOne(ID id);&#x2F;&#x2F;根据id查找实体</span><br><span class="line">boolean exists(ID id);&#x2F;&#x2F;根据id判断实体是否存在</span><br><span class="line">Iterable findAll();&#x2F;&#x2F;查询所有实体,不用或慎用!</span><br><span class="line">long count();&#x2F;&#x2F;查询实体数量</span><br><span class="line">void delete(ID id);&#x2F;&#x2F;根据Id删除实体</span><br><span class="line">void delete(T entity);&#x2F;&#x2F;删除一个实体</span><br><span class="line">void delete(Iterable&lt;? extends T&gt; entities);&#x2F;&#x2F;删除一个实体的集合</span><br><span class="line">void deleteAll();&#x2F;&#x2F;删除所有实体,不用或慎用!</span><br><span class="line">PagingAndSortingRepository接口提供了分页与排序功能</span><br><span class="line"></span><br><span class="line">Iterable findAll(Sort sort); &#x2F;&#x2F;排序</span><br><span class="line">Page findAll(Pageable pageable); &#x2F;&#x2F;分页查询（含排序功能）</span><br><span class="line">JpaRepository接口提供了JPA的相关功能</span><br><span class="line"></span><br><span class="line">List findAll(); &#x2F;&#x2F;查找所有实体</span><br><span class="line">List findAll(Sort sort); &#x2F;&#x2F;排序、查找所有实体</span><br><span class="line">List save(Iterable&lt;? extends T&gt; entities);&#x2F;&#x2F;保存集合</span><br><span class="line">void flush();&#x2F;&#x2F;执行缓存与数据库同步</span><br><span class="line">T saveAndFlush(T entity);&#x2F;&#x2F;强制执行持久化</span><br><span class="line">void deleteInBatch(Iterable entities);&#x2F;&#x2F;删除一个实体集合</span><br><span class="line">JpaSpecificationExecutor接口</span><br><span class="line"></span><br><span class="line">不属于Repository体系，实现一组 JPA Criteria 查询相关的方法</span><br><span class="line"></span><br><span class="line">public interface JpaSpecificationExecutor&lt;T&gt; &#123;</span><br><span class="line">	Optional&lt;T&gt; findOne(@Nullable Specification&lt;T&gt; spec);</span><br><span class="line">	List&lt;T&gt; findAll(@Nullable Specification&lt;T&gt; spec);</span><br><span class="line">	Page&lt;T&gt; findAll(@Nullable Specification&lt;T&gt; spec, Pageable pageable);</span><br><span class="line">	List&lt;T&gt; findAll(@Nullable Specification&lt;T&gt; spec, Sort sort);</span><br><span class="line">	long count(@Nullable Specification&lt;T&gt; spec);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">T save(T entity);//保存单个实体</span><br><span class="line">Iterable save(Iterable&lt;? extends T&gt; entities);//保存集合</span><br><span class="line">T findOne(ID id);//根据id查找实体</span><br><span class="line">boolean exists(ID id);//根据id判断实体是否存在</span><br><span class="line">Iterable findAll();//查询所有实体,不用或慎用!</span><br><span class="line">long count();//查询实体数量</span><br><span class="line">void delete(ID id);//根据Id删除实体</span><br><span class="line">void delete(T entity);//删除一个实体</span><br><span class="line">void delete(Iterable&lt;? extends T&gt; entities);//删除一个实体的集合</span><br><span class="line">void deleteAll();//删除所有实体,不用或慎用!</span><br><span class="line">PagingAndSortingRepository接口提供了分页与排序功能</span><br><span class="line"></span><br><span class="line">Iterable findAll(Sort sort); //排序</span><br><span class="line">Page findAll(Pageable pageable); //分页查询（含排序功能）</span><br><span class="line">JpaRepository接口提供了JPA的相关功能</span><br><span class="line"></span><br><span class="line">List findAll(); //查找所有实体</span><br><span class="line">List findAll(Sort sort); //排序、查找所有实体</span><br><span class="line">List save(Iterable&lt;? extends T&gt; entities);//保存集合</span><br><span class="line">void flush();//执行缓存与数据库同步</span><br><span class="line">T saveAndFlush(T entity);//强制执行持久化</span><br><span class="line">void deleteInBatch(Iterable entities);//删除一个实体集合</span><br><span class="line">JpaSpecificationExecutor接口</span><br><span class="line"></span><br><span class="line">不属于Repository体系，实现一组 JPA Criteria 查询相关的方法</span><br><span class="line"></span><br><span class="line">public interface JpaSpecificationExecutor&lt;T&gt; &#123;</span><br><span class="line">	Optional&lt;T&gt; findOne(@Nullable Specification&lt;T&gt; spec);</span><br><span class="line">	List&lt;T&gt; findAll(@Nullable Specification&lt;T&gt; spec);</span><br><span class="line">	Page&lt;T&gt; findAll(@Nullable Specification&lt;T&gt; spec, Pageable pageable);</span><br><span class="line">	List&lt;T&gt; findAll(@Nullable Specification&lt;T&gt; spec, Sort sort);</span><br><span class="line">	long count(@Nullable Specification&lt;T&gt; spec);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Specification：封装 JPA Criteria 查询条件。通常使用匿名内部类的方式来创建该接口的对象，Specification接口中有一个方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Nullable</span><br><span class="line">Predicate toPredicate(Root&lt;T&gt; root, CriteriaQuery&lt;?&gt; query, CriteriaBuilder criteriaBuilder);</span><br></pre></td></tr></table></figure>
+
 <p>其中的root是用来进行属性导航的，比如说实体类中有一个属性是username，用root来导航到这个username，需要像下面这样写:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root.get(&quot;username&quot;).as(String.class);</span><br></pre></td></tr></table></figure>
-
-
 
 <p>JPQL查询语法<br>假设有一个实体类User，实体类中有两个属性username和password</p>
 <p>查询全部：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from User;</span><br></pre></td></tr></table></figure>
-
 
 <p>查询结果按照username倒序：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from User order by username desc;</span><br></pre></td></tr></table></figure>
@@ -367,7 +392,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select count(username) from User;</span><br></pre></td></tr></table></figure>
 
 <p>分页和条件查询:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Query(&quot;SELECT DISTINCT u FROM User u where u.username &#x3D; ?1&quot;)</span><br><span class="line">public List&lt;User&gt; findByUsername(String username, Pageable pageable);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Query(&quot;SELECT DISTINCT u FROM User u where u.username = ?1&quot;)</span><br><span class="line">public List&lt;User&gt; findByUsername(String username, Pageable pageable);</span><br></pre></td></tr></table></figure>
+
 
     
 
@@ -663,27 +689,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RabbitMq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RabbitMq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringData</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -699,15 +713,27 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringData</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -716,10 +742,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据备份</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -900,6 +922,66 @@
   <!-- <script async type="text/javascript" size="90" alpha="0.2" zIndex="0" src="/plugins/ribbon.js/ribbon.min.js"></script> -->
   
   
+    <script type="text/javascript" src="/plugins/live2d-widget.js/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+  /**
+   * 完整配置请参考：https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
+   */
+  var pluginModelPath = "assets/", // 模型的文件路径，无需更改
+    pluginRootPath = "/live2d_models/"; // 插件的路径，无需更改
+  //特定的模型json文件名称
+  var modelPathJson = {
+    "epsilon2_1": "Epsilon2.1",
+    "gf": "Gantzert_Felixander",
+    "haru/01": "haru01",
+    "haru/02": "haru02",
+    "nietzsche": "nietzche"
+  }
+
+  
+    var modelName = "hibiki";
+  
+
+  var modelJsonPath = "";
+  if (modelPathJson[modelName]) {
+    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelPathJson[modelName] +
+      ".model.json";
+  } else {
+    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelName + ".model.json";
+  }
+  L2Dwidget.init({
+    model: {
+      jsonPath: modelJsonPath
+    },
+    display: {
+       position: "right", 
+       width: 145, 
+       height: 315, 
+       hOffset: 50, 
+      
+    },
+    mobile: {
+      
+       scale: 0.6 
+    },
+    react: {
+       opacity: 0.8 
+    }
+  })
+
+</script>
+
+  
+  
+  <script type="text/javascript" src="/lib/snow.js"></script>
+  <script type="text/javascript" src="/lib/jquery-2.1.4.min.js"></script>
+  <script>
+    snow.down();
+    $(window).resize(function() {
+      $("canvas").css("z-index","500").remove();
+      snow.down();
+    });
+  </script>
   
 </body>
 

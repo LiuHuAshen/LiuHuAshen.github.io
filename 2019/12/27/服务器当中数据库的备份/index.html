@@ -10,18 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="一：找到Mysql所在位置 1whereis mysql 二：进入到mysql的位置 1cd &amp;#x2F;usr&amp;#x2F;bin  三、导出数据1.导出表和结构 1mysqldump -uroot -proot --set-gtid-purged&amp;#x3D;OFF halodb  &amp;gt; ~&amp;#x2F;halodb.sql 2.只导出结构 1mysqldump -u用户名 -p密码 -d 数据">
+  <meta name="description" content="一：找到Mysql所在位置 1whereis mysql  二：进入到mysql的位置 1cd /usr/bin  三、导出数据1.导出表和结构 1mysqldump -uroot -proot --set-gtid-purged=OFF halodb  &amp;gt; ~/halodb.sql  2.只导出结构 1mysqldump -u用户名 -p密码 -d 数据库名 &amp;gt; 数据库名.sql">
 <meta name="keywords" content="服务器,数据备份">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器当中数据库的备份">
 <meta property="og:url" content="https://LiuHuAshen.github.io/2019/12/27/服务器当中数据库的备份/index.html">
 <meta property="og:site_name" content="LHS&#39;Blogs">
-<meta property="og:description" content="一：找到Mysql所在位置 1whereis mysql 二：进入到mysql的位置 1cd &amp;#x2F;usr&amp;#x2F;bin  三、导出数据1.导出表和结构 1mysqldump -uroot -proot --set-gtid-purged&amp;#x3D;OFF halodb  &amp;gt; ~&amp;#x2F;halodb.sql 2.只导出结构 1mysqldump -u用户名 -p密码 -d 数据">
+<meta property="og:description" content="一：找到Mysql所在位置 1whereis mysql  二：进入到mysql的位置 1cd /usr/bin  三、导出数据1.导出表和结构 1mysqldump -uroot -proot --set-gtid-purged=OFF halodb  &amp;gt; ~/halodb.sql  2.只导出结构 1mysqldump -u用户名 -p密码 -d 数据库名 &amp;gt; 数据库名.sql">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-12-27T02:45:43.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器当中数据库的备份">
-<meta name="twitter:description" content="一：找到Mysql所在位置 1whereis mysql 二：进入到mysql的位置 1cd &amp;#x2F;usr&amp;#x2F;bin  三、导出数据1.导出表和结构 1mysqldump -uroot -proot --set-gtid-purged&amp;#x3D;OFF halodb  &amp;gt; ~&amp;#x2F;halodb.sql 2.只导出结构 1mysqldump -u用户名 -p密码 -d 数据">
+<meta name="twitter:description" content="一：找到Mysql所在位置 1whereis mysql  二：进入到mysql的位置 1cd /usr/bin  三、导出数据1.导出表和结构 1mysqldump -uroot -proot --set-gtid-purged=OFF halodb  &amp;gt; ~/halodb.sql  2.只导出结构 1mysqldump -u用户名 -p密码 -d 数据库名 &amp;gt; 数据库名.sql">
   
     <link rel="alternative" href="/atom.xml" title="LHS&#39;Blogs" type="application/atom+xml">
   
@@ -48,7 +48,26 @@
   
   
 
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
 
+</script>
+
+
+
+  
+    <script src="/lib/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
   
 
 </head>
@@ -111,6 +130,18 @@
 					<a class="cnblog" href="#" title="博客园" ><i class="icon-cnblog"></i></a>
 				
 			</div>
+		
+			
+			
+			
+			
+			<div>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=1334445174&auto=1&height=66"></iframe>
+			</div>
+			
+				
+				<p style="font-size: 12px;">这似乎是首纯音乐，请尽情的欣赏它吧！<p>
+			
 		
 		</nav>
 	</header>		
@@ -219,7 +250,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">73字</span>
+      <span class="post-count">69字</span>
     </span>
   </span>
 
@@ -241,11 +272,13 @@
     
     <p>一：找到Mysql所在位置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis mysql</span><br></pre></td></tr></table></figure>
+
 <p>二：进入到mysql的位置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;usr&#x2F;bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/bin</span><br></pre></td></tr></table></figure>
 
 <p>三、导出数据<br>1.导出表和结构</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -proot --set-gtid-purged&#x3D;OFF halodb  &gt; ~&#x2F;halodb.sql</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -proot --set-gtid-purged=OFF halodb  &gt; ~/halodb.sql</span><br></pre></td></tr></table></figure>
+
 <p>2.只导出结构</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u用户名 -p密码 -d 数据库名 &gt; 数据库名.sql</span><br></pre></td></tr></table></figure>
 
@@ -548,27 +581,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RabbitMq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RabbitMq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringData</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,15 +605,27 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringData</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -601,10 +634,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据备份</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -785,6 +814,66 @@
   <!-- <script async type="text/javascript" size="90" alpha="0.2" zIndex="0" src="/plugins/ribbon.js/ribbon.min.js"></script> -->
   
   
+    <script type="text/javascript" src="/plugins/live2d-widget.js/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+  /**
+   * 完整配置请参考：https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
+   */
+  var pluginModelPath = "assets/", // 模型的文件路径，无需更改
+    pluginRootPath = "/live2d_models/"; // 插件的路径，无需更改
+  //特定的模型json文件名称
+  var modelPathJson = {
+    "epsilon2_1": "Epsilon2.1",
+    "gf": "Gantzert_Felixander",
+    "haru/01": "haru01",
+    "haru/02": "haru02",
+    "nietzsche": "nietzche"
+  }
+
+  
+    var modelName = "hibiki";
+  
+
+  var modelJsonPath = "";
+  if (modelPathJson[modelName]) {
+    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelPathJson[modelName] +
+      ".model.json";
+  } else {
+    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelName + ".model.json";
+  }
+  L2Dwidget.init({
+    model: {
+      jsonPath: modelJsonPath
+    },
+    display: {
+       position: "right", 
+       width: 145, 
+       height: 315, 
+       hOffset: 50, 
+      
+    },
+    mobile: {
+      
+       scale: 0.6 
+    },
+    react: {
+       opacity: 0.8 
+    }
+  })
+
+</script>
+
+  
+  
+  <script type="text/javascript" src="/lib/snow.js"></script>
+  <script type="text/javascript" src="/lib/jquery-2.1.4.min.js"></script>
+  <script>
+    snow.down();
+    $(window).resize(function() {
+      $("canvas").css("z-index","500").remove();
+      snow.down();
+    });
+  </script>
   
 </body>
 
