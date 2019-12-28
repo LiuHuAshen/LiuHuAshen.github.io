@@ -11,18 +11,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="主要注意 1）ip和端口号不正确 2）虚拟机中防火墙的原因（可能性较大） 3）redis.conf 中bind 127.0.0.1 未用#注释掉 4）未取消保护模式 在第一和第二种情况都正确的情况下仍然连接不了，则修改redis.conf文件1)打开配置文件把下面对应的注释掉 1# bind 127.0.0.1  2)Redis默认不是以守护进程的方式运行，可以通过该配置项修改，使用yes启用守护">
+<meta name="keywords" content="springboot,redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java连接redis不成功的问题">
-<meta property="og:url" content="https://liuhuashen.github.io/2019/12/27/java%E8%BF%9E%E6%8E%A5redis%E4%B8%8D%E6%88%90%E5%8A%9F%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:url" content="https://LiuHuAshen.github.io/2019/12/27/java连接redis不成功的问题/index.html">
 <meta property="og:site_name" content="LHS&#39;Blogs">
 <meta property="og:description" content="主要注意 1）ip和端口号不正确 2）虚拟机中防火墙的原因（可能性较大） 3）redis.conf 中bind 127.0.0.1 未用#注释掉 4）未取消保护模式 在第一和第二种情况都正确的情况下仍然连接不了，则修改redis.conf文件1)打开配置文件把下面对应的注释掉 1# bind 127.0.0.1  2)Redis默认不是以守护进程的方式运行，可以通过该配置项修改，使用yes启用守护">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-12-27T01:50:43.000Z">
-<meta property="article:modified_time" content="2019-12-28T05:40:44.962Z">
-<meta property="article:author" content="LHS">
-<meta property="article:tag" content="springboot">
-<meta property="article:tag" content="redis">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-28T05:40:44.962Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java连接redis不成功的问题">
+<meta name="twitter:description" content="主要注意 1）ip和端口号不正确 2）虚拟机中防火墙的原因（可能性较大） 3）redis.conf 中bind 127.0.0.1 未用#注释掉 4）未取消保护模式 在第一和第二种情况都正确的情况下仍然连接不了，则修改redis.conf文件1)打开配置文件把下面对应的注释掉 1# bind 127.0.0.1  2)Redis默认不是以守护进程的方式运行，可以通过该配置项修改，使用yes启用守护">
   
     <link rel="alternative" href="/atom.xml" title="LHS&#39;Blogs" type="application/atom+xml">
   
@@ -105,11 +104,11 @@
 				
 					<a class="github" href="#" title="GitHub" ><i class="icon-github"></i></a>
 				
-					<a class="gitee" href="#" title="gitee" ><i class="icon-gitee"></i></a>
+					<a class="gitee" href="#" title="码云" ><i class="icon-gitee"></i></a>
 				
-					<a class="jianshu" href="#" title="jianshu" ><i class="icon-jianshu"></i></a>
+					<a class="jianshu" href="#" title="简书" ><i class="icon-jianshu"></i></a>
 				
-					<a class="cnblog" href="#" title="cnblog" ><i class="icon-cnblog"></i></a>
+					<a class="cnblog" href="#" title="博客园" ><i class="icon-cnblog"></i></a>
 				
 			</div>
 		
@@ -154,11 +153,11 @@
 					
 						<a class="github" target="_blank" href="#" title="GitHub"><i class="icon-github"></i></a>
 			        
-						<a class="gitee" target="_blank" href="#" title="gitee"><i class="icon-gitee"></i></a>
+						<a class="gitee" target="_blank" href="#" title="码云"><i class="icon-gitee"></i></a>
 			        
-						<a class="jianshu" target="_blank" href="#" title="jianshu"><i class="icon-jianshu"></i></a>
+						<a class="jianshu" target="_blank" href="#" title="简书"><i class="icon-jianshu"></i></a>
 			        
-						<a class="cnblog" target="_blank" href="#" title="cnblog"><i class="icon-cnblog"></i></a>
+						<a class="cnblog" target="_blank" href="#" title="博客园"><i class="icon-cnblog"></i></a>
 			        
 				</div>
 			</nav>
@@ -206,7 +205,7 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/12/27/java%E8%BF%9E%E6%8E%A5redis%E4%B8%8D%E6%88%90%E5%8A%9F%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+<a href="/2019/12/27/java连接redis不成功的问题/" class="archive-article-date">
         <time datetime="2019-12-27T01:50:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
 </a>
 
@@ -383,7 +382,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://liuhuashen.github.io/2019/12/27/java%E8%BF%9E%E6%8E%A5redis%E4%B8%8D%E6%88%90%E5%8A%9F%E7%9A%84%E9%97%AE%E9%A2%98/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://LiuHuAshen.github.io/2019/12/27/java连接redis不成功的问题/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -408,7 +407,7 @@
     </a>
   
   
-    <a href="/2019/12/27/Redis%E7%9A%84%E4%BA%94%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/12/27/Redis的五种数据类型/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Redis的五种数据类型</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -591,6 +590,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Springboot</a>
               </li>
              
               <li class="article-tag-list-item">
