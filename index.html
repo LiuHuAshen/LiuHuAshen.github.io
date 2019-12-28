@@ -192,6 +192,104 @@
 
 
   
+    <article id="post-scrapy爬虫的一个实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2019/12/28/scrapy%E7%88%AC%E8%99%AB%E7%9A%84%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B/" target="_blank">scrapy爬虫的一个实例</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2019/12/28/scrapy%E7%88%AC%E8%99%AB%E7%9A%84%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B/" class="archive-article-date">
+        <time datetime="2019-12-28T04:05:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-28</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p><strong>一:建立一个Scrapy爬虫工程</strong><br>打开cmd:输人scrapy startproject python123,,如下截图:<br>这里输入的意思是定义一个工程,它的名字叫python123.<img src="https://img-blog.csdnimg.cn/20191030195534891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hCMTU0NTg3NTU=,size_16,color_FFFFFF,t_70" alt=""><br>此时在d盘中可以看到生成的scrapy的工程<br><img src="https://img-blog.csdnimg.cn/20191030195822965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hCMTU0NTg3NTU=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>介绍上述文件的作用：<br><strong>scrapy.cfg</strong>  这个配置,是将爬虫放在特定的服务器上,并且在服务器配置好相关的操作接口.对于本机使用爬虫,不需要改变部署的配置文件.<br><strong>init.py</strong>  用户不需要编写<br><strong>items.py</strong>  需要继承scrapy库提供的ietms类,对于一般的例子用户不需要编写<br><strong>middlewares.py</strong>  如果用户需要扩展middlewares的功能,则需要编写.<br><strong>pipelines.py</strong>  指的是框架中的pipelines模块<br><strong>settings.py</strong>  指的是Scrapy爬虫的文件,如果需要优化爬虫,则需要设置这个文件对应的配置项.<br><strong>spiders</strong>    是在存放python123demo工程建立的爬虫</p>
+<p><strong>二:在工程中产生一个Scrapy爬虫</strong><br>输入命令：scrapy genspider demo python123.io<br><img src="https://img-blog.csdnimg.cn/20191030200217681.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hCMTU0NTg3NTU=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>三、配置产生的spider爬虫</strong><br>在文件当中生成了一个demo.py文件，然后对该文件进行修改，代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class DemoSpider(scrapy.Spider):</span><br><span class="line">    name = <span class="string">'demo'</span></span><br><span class="line">    #allowed_domains = ['python123.io']</span><br><span class="line">    start_urls = [<span class="string">'http://python123.io/ws/demo.html'</span>]</span><br><span class="line"></span><br><span class="line">    def parse(self, response):</span><br><span class="line">        fname=response.url.split(<span class="string">'/'</span>)[<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">with</span> open(fname,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(response.body)</span><br><span class="line">        self.log(<span class="string">'Save file %s.'</span> %fname)</span><br></pre></td></tr></table></figure>
+<p>1 )是一个面向对象编写的类,这个类叫DemoSpider<br>2 )由于我们的名字叫demo,所以这个类名也叫demospider,名字也可以叫我们任何想叫的名字.<br>3 )这个类必须是继承与scrapy.Spider的子类.<br>4 )这里有个变量叫name,被赋值为demo,说明当前爬虫的名字叫demo.<br>5 )allowed_domains这个是用户提交给命令行的命名.这个爬虫在爬取网站的时候只能爬取这个域名以下的相关链接.<br>6 )start_urls以列表的形式包含一个或多个url就是scrapy框架要爬取的初始页面.<br>7 )def parse是解析页面一个空的方法.<br>8 )pass是处理响应,可以解析从网上爬取的内容,并形成字典类型,同时对网络中爬取的内容发现其中隐含的新的url.</p>
+<p>程序的改进，使用yield生成器：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class DemoSpider(scrapy.Spider):</span><br><span class="line">    name = <span class="string">'demo'</span></span><br><span class="line">    def start_requests(self):</span><br><span class="line">        urls=[</span><br><span class="line">              <span class="string">'http://python123.io/ws/demo.html'</span></span><br><span class="line">            ]</span><br><span class="line">        <span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">            <span class="keyword">yield</span> scrapy.Request(url=url,callback=self.parse)</span><br><span class="line"></span><br><span class="line">    def parse(self, response):</span><br><span class="line">        fname=response.url.split(<span class="string">'/'</span>)[<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">with</span> open(fname,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(response.body)</span><br><span class="line">        self.log(<span class="string">'Save file %s.'</span> %fname)</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>四、运行爬虫,获取网页</strong><br>在命令行cmd执行这个命令,输入:crapy crawl demo<br><img src="https://img-blog.csdnimg.cn/20191030200823465.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hCMTU0NTg3NTU=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>此时，就爬取成功了，在目录下生成了demo.html文件<br><img src="https://img-blog.csdnimg.cn/20191030200905413.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hCMTU0NTg3NTU=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">scrapy</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/12/28/scrapy%E7%88%AC%E8%99%AB%E7%9A%84%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MySQL的优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1092,92 +1190,6 @@
 
 
   
-    <article id="post-Redis集群" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/27/Redis%E9%9B%86%E7%BE%A4/" target="_blank">Redis集群</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/12/27/Redis%E9%9B%86%E7%BE%A4/" class="archive-article-date">
-        <time datetime="2019-12-27T01:46:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><strong>优点：</strong><br>Redis集群实现了对Redis的水平扩容<br>分摊压力<br>无中心配置相对简单</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/27/Redis%E9%9B%86%E7%BE%A4/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1347,6 +1359,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
             
             <div class="clearfix"></div>

@@ -192,6 +192,123 @@
 
 
   
+    <article id="post-微服务和微服务架构的概念" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2019/12/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%92%8C%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E7%9A%84%E6%A6%82%E5%BF%B5/" target="_blank">微服务和微服务架构的概念</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2019/12/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%92%8C%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E7%9A%84%E6%A6%82%E5%BF%B5/" class="archive-article-date">
+        <time datetime="2019-12-26T14:43:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p><strong>微服务的概念：</strong></p>
+<p>微服务强调的是单个服务的大小（个体服务），关注的是 某一个点，具体解决某一个问题/提供落地对应服务的一个服务应用 ；<br>狭义的看，可以看成 Eclipse 里面的一个个微服务工程或者Module，一个微服务工程负责一件事情。</p>
+<p><strong>微服务架构概念：</strong></p>
+<ul>
+<li>微服务架构强调是应用的整体（应用全部服务）：</li>
+<li>一种架构模式或者说是一种架构风格；它提倡将单一的应用拆分成一组小的服务，且每个服务都运行在独立的“进程中”，服务之间相互协调和配合，为用户提供最终的价值；</li>
+<li>服务之间采用轻量级的通信机制相互沟通（HTTP的RESTful API），dubbo：采用的是RPC远程调用；</li>
+<li>每个服务都围绕着具体业务进行构建，并且能够被独立的部署到生产环境中，应当尽量避免统一的、集中式的服务管理机制，对于具体的服务而言，应根据业务上下文，选择合适的语言和工具进行构建；</li>
+<li>通俗来说：微服务化的核心就是将传统的一站式应用，根据业务的拆分成一个一个的服务，彻底地去耦合，每个微服务提供单个业务功能的服务，一个服务只做一件事，从技术的角度看就是一种小而独立的处理过程，类似进程概念，能够自行单独启动或销毁，拥有自己独立的数据库。</li>
+</ul>
+<p>微服务的优缺点：</p>
+<p><strong>优点：</strong></p>
+<ol>
+<li>每个服务足够内聚，足够小，代码容易理解；这样能够聚焦一个指定的业务功能或业务需求；</li>
+<li>开发简单、开发效率提高，一个服务可能就是专一的做一个业务功能；</li>
+<li>微服务能够被小团队单独开发，2-5人的开发人员组成；</li>
+<li>微服务是松耦合的，具有功能意义的服务，无论是在开发阶段或部署阶段都是独立的；</li>
+<li>微服务能够使用不同的语言开发；</li>
+<li>易于和第三方集成，微服务允许容易且灵活的方式集成自动部署，通过持续集成工具，如Jenkins,Hudson,bamboo；</li>
+<li>微服务只是业务逻辑的代码，不会和“HTML、CSS”或其他的界面组件混合；</li>
+<li>每个微服务都有自己的存储能力，可以有自己的数据库，也可以有统一的数据库</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li>开发人员要处理分布式系统的复杂性；</li>
+<li>多服务运维难度，随着服务的增加，运维的压力也在增大；</li>
+<li>系统部署依赖；</li>
+<li>服务之间通信成本；</li>
+<li>数据一致性；</li>
+<li>系统集成测试；</li>
+<li>性能监控</li>
+</ol>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">微服务</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/12/26/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%92%8C%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E7%9A%84%E6%A6%82%E5%BF%B5/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ElasticSearch在Springboot中的两种实现方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -553,6 +670,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
             
             <div class="clearfix"></div>
