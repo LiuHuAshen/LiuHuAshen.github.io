@@ -236,6 +236,104 @@
 
 
   
+    <article id="post-Redis的主从复制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2019/12/27/Redis的主从复制/">Redis的主从复制</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2019/12/27/Redis的主从复制/" class="archive-article-date">
+        <time datetime="2019-12-27T01:48:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>Master以写为主，Slave以读为主</p>
+<p>用处：</p>
+<ul>
+<li>读写分离，性能扩展</li>
+<li>容灾快速恢复</li>
+</ul>
+<p>步骤<br><img src="http://182.92.102.146/upload/2019/12/image-5b2c6c31e6804617b86f5cc96cf8046a.png" alt="image.png"></p>
+<p>语法：<br>打印主从复制的相关信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">info replication</span><br></pre></td></tr></table></figure>
+
+<p>成为某个实例的从服务器:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slaveof &lt;ip&gt; &lt;port&gt;</span><br></pre></td></tr></table></figure>
+
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/12/27/Redis的主从复制/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Redis的哨兵模式（sentinel）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1079,97 +1177,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2019/12/27/SpringSecurity的使用/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Springboot的开发热部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/27/Springboot的开发热部署/">Springboot的开发热部署</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/12/27/Springboot的开发热部署/" class="archive-article-date">
-        <time datetime="2019-12-27T01:31:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>在开发中我们修改了一个java文件想看到效果又不得不重新启动应用，这到导致大量时间的花费，我们希望不重启应用的情况下，程序可以自动部署（热部署），这里推荐使用spring boot devtools。</p>
-<p>spring-boot-devtools 是一个为开发者服务的一个模块，其中最重要的功能就是自动应用代码更改到最新的App上面去。原理是在发现代码有更改之后，重新启动应用，但是比速度比手动停止后再启动还要更快，更快指的不是节省出来的手工操作的时间。</p>
-<p>使用方法：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;  </span><br><span class="line">     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  </span><br><span class="line">     &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;  </span><br><span class="line">     &lt;optional&gt;true&lt;/optional&gt;  </span><br><span class="line"> &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-
-<p>按Ctrl+F9进行改变。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">springboot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/27/Springboot的开发热部署/">展开全文 >></a>
     </p>
     
 
