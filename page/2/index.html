@@ -236,6 +236,102 @@
 
 
   
+    <article id="post-Redis的持久化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2019/12/27/Redis的持久化/">Redis的持久化</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2019/12/27/Redis的持久化/" class="archive-article-date">
+        <time datetime="2019-12-27T01:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="Redis提供了两个不同形式的持久化方式"><a href="#Redis提供了两个不同形式的持久化方式" class="headerlink" title="Redis提供了两个不同形式的持久化方式"></a>Redis提供了两个不同形式的持久化方式</h3><h4 id="1、RDB（redis-of-Database）"><a href="#1、RDB（redis-of-Database）" class="headerlink" title="1、RDB（redis of Database）"></a>1、RDB（redis of Database）</h4><p>在指定的时间间隔内将内存的数据集快照（状态）写入磁盘，恢复是将快照文件直接读到内存里。RDB的方式要AOF更加高效。<br>优点：</p>
+<ul>
+<li>节省磁盘空间</li>
+<li>恢复速度快</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>虽然在fork是使用了写时拷贝技术，但是如果数据庞大时还是比较消耗性能。</li>
+<li>最后一次持久化后的数据可能丢失。<h4 id="2、AOF（Append-of-file）"><a href="#2、AOF（Append-of-file）" class="headerlink" title="2、AOF（Append of file）"></a>2、AOF（Append of file）</h4>以日志的形式来记录每个写操作。每秒更新。</li>
+</ul>
+<p>RDB和AOF同时使用的话，Redis更倾向于AOF。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/12/27/Redis的持久化/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Redis的主从复制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1117,95 +1213,6 @@
 
 
   
-    <article id="post-SpringSecurity的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/27/SpringSecurity的使用/">SpringSecurity的使用</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/12/27/SpringSecurity的使用/" class="archive-article-date">
-        <time datetime="2019-12-27T01:32:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>编写配置文件，继承WebSecurityConfigurerAdapter 接口，具体的使用参考<br><a href="https://docs.spring.io/spring-security/site/docs/current/guides/html5/helloworld-boot.html" target="_blank" rel="noopener">https://docs.spring.io/spring-security/site/docs/current/guides/html5/helloworld-boot.html</a></p>
-<p>权限的授予与用户的认证规则</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableWebSecurity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySecurityConfig</span> <span class="keyword">extends</span> <span class="title">WebSecurityConfigurerAdapter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//授予</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(HttpSecurity http)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        http</span><br><span class="line">                .authorizeRequests()</span><br><span class="line">                .antMatchers(<span class="string">"/"</span>).permitAll()</span><br><span class="line">                .antMatchers(<span class="string">"/level1/**"</span>).hasRole(<span class="string">"VIP1"</span>)</span><br><span class="line">                .antMatchers(<span class="string">"/level2/**"</span>).hasRole(<span class="string">"VIP2"</span>)</span><br><span class="line">                .antMatchers(<span class="string">"/level3/**"</span>).hasRole(<span class="string">"VIP3"</span>);</span><br><span class="line">        http.formLogin();<span class="comment">//没有登录返回到登录页面</span></span><br><span class="line">        http.logout().logoutSuccessUrl(<span class="string">"/"</span>);<span class="comment">//注销后返回</span></span><br><span class="line">        http.rememberMe();<span class="comment">//记住我</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//认证</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        auth.inMemoryAuthentication().passwordEncoder(<span class="keyword">new</span> MyPasswordEncoder()).</span><br><span class="line">                withUser(<span class="string">"user1"</span>).password(<span class="string">"111111"</span>).roles(<span class="string">"VIP1"</span>, <span class="string">"VIP2"</span>)</span><br><span class="line">                .and()</span><br><span class="line">                .withUser(<span class="string">"user2"</span>).password(<span class="string">"111111"</span>).roles(<span class="string">"VIP2"</span>, <span class="string">"VIP3"</span>)</span><br><span class="line">                .and()</span><br><span class="line">                .withUser(<span class="string">"user3"</span>).password(<span class="string">"111111"</span>).roles(<span class="string">"VIP1"</span>, <span class="string">"VIP3"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">SpringSecurity</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/27/SpringSecurity的使用/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1334,7 +1341,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1342,11 +1353,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
+                <a href="javascript:void(0)" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1358,11 +1365,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1378,11 +1389,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
             
             <div class="clearfix"></div>

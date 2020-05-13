@@ -340,6 +340,93 @@
 
 
   
+    <article id="post-代价函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/05/13/代价函数/">代价函数</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/05/13/代价函数/" class="archive-article-date">
+        <time datetime="2020-05-13T01:05:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>  在线性回归中我们有一个像这样的训练集，𝑚代表了训练样本的数量，比如 𝑚 = 47。而我们的假设函数，也就是用来进行预测的函数，是这样的线性函数形式： ℎ𝜃(𝑥) = 𝜃0 + 𝜃1𝑥。我们选择的参数决定了我们得到的直线相对于我们的训练集的准确程度，模型所预测的值与训练集中实际值之间的差距（下图中蓝线所指）就是建模误差（modeling error）。<br><img src="https://img-blog.csdnimg.cn/20191106151844646.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hCMTU0NTg3NTU=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br> 我们的目标便是选择出可以使得建模误差的平方和能够最小的模型参数。 即使得代价函数<img src="https://img-blog.csdnimg.cn/20191106151044613.png" alt="在这里插入图片描述">达到最小。</p>
+<p>我们绘制一个等高线图，三个坐标分别为𝜃0和𝜃1 和𝐽(𝜃0,𝜃1)，如下图所示，可以看出在三维空间中存在一个使得𝐽(𝜃0,𝜃1)最小的点。<br><img src="https://img-blog.csdnimg.cn/20191106151420198.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hCMTU0NTg3NTU=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>为什么误差平方代价函数？</strong>代价函数也被称作平方误差函数，有时也被称为平方误差代价函数。我们之所以要求出误差的平方和，是因为误差平方代价函数，对于大多数问题，特别是回归问题，都是一个合理的选择。还有其他的代价函数也能很好地发挥作用，但是平方误差代价函数可能是解决回归问题最常用的手段了。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/05/13/代价函数/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一篇随笔" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1120,102 +1207,6 @@
 
 
   
-    <article id="post-Redis的持久化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/27/Redis的持久化/">Redis的持久化</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/12/27/Redis的持久化/" class="archive-article-date">
-        <time datetime="2019-12-27T01:49:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="Redis提供了两个不同形式的持久化方式"><a href="#Redis提供了两个不同形式的持久化方式" class="headerlink" title="Redis提供了两个不同形式的持久化方式"></a>Redis提供了两个不同形式的持久化方式</h3><h4 id="1、RDB（redis-of-Database）"><a href="#1、RDB（redis-of-Database）" class="headerlink" title="1、RDB（redis of Database）"></a>1、RDB（redis of Database）</h4><p>在指定的时间间隔内将内存的数据集快照（状态）写入磁盘，恢复是将快照文件直接读到内存里。RDB的方式要AOF更加高效。<br>优点：</p>
-<ul>
-<li>节省磁盘空间</li>
-<li>恢复速度快</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>虽然在fork是使用了写时拷贝技术，但是如果数据庞大时还是比较消耗性能。</li>
-<li>最后一次持久化后的数据可能丢失。<h4 id="2、AOF（Append-of-file）"><a href="#2、AOF（Append-of-file）" class="headerlink" title="2、AOF（Append of file）"></a>2、AOF（Append of file）</h4>以日志的形式来记录每个写操作。每秒更新。</li>
-</ul>
-<p>RDB和AOF同时使用的话，Redis更倾向于AOF。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/27/Redis的持久化/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1344,7 +1335,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1352,11 +1347,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
+                <a href="javascript:void(0)" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1368,11 +1359,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1388,11 +1383,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
             
             <div class="clearfix"></div>
