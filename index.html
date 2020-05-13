@@ -106,6 +106,8 @@
 			
 				<li><a href="/tags/随笔" >随笔</a></li>
 			
+				<li><a href="/tags/每日算法" >每日算法</a></li>
+			
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -184,6 +186,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -204,13 +208,15 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 20%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 20%"><a href="/photos">相册</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/随笔">随笔</a></li>
+					<li style="width: 20%"><a href="/tags/随笔">随笔</a></li>
+		        
+					<li style="width: 20%"><a href="/tags/每日算法">每日算法</a></li>
 		        
 				</ul>
 			</nav>
@@ -311,6 +317,99 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2019/12/26/spring-boot学习笔记/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-两数和" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/05/13/两数和/">两数和</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/05/13/两数和/" class="archive-article-date">
+        <time datetime="2020-05-13T02:39:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>问题描述：</p>
+<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。<br>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。<br>示例:<br>给定 nums = [2, 7, 11, 15], target = 9<br>因为 nums[0] + nums[1] = 2 + 7 = 9<br>所以返回 [0, 1]</p>
+<p>我的解决方法：<br>import java.util.Arrays;<br>class Test01 {<br>    public int[] twoSum(int[] nums, int target) {<br>        int i,j;<br>        int[] result=new int[2];<br>        for(i=0;i&lt;nums.length;i++){<br>            for(j=i+1;j&lt;nums.length;j++){<br>                if(nums[i]+nums[j]==target){<br>                    result[0]=i;<br>                    result[1]=j;<br>                    return result;<br>                }<br>            }<br>        }<br>        return result;<br>    }</p>
+<pre><code>public static void main(String[] args) {
+    Test01 t=new Test01();
+    int[] n={0,1,2,4,6};
+    System.out.println(Arrays.toString(t.twoSum(n, 3)));
+}</code></pre><p>}</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">每日算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/05/13/两数和/">展开全文 >></a>
     </p>
     
 
@@ -1098,115 +1197,6 @@
 
 
   
-    <article id="post-Redis的五种数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/27/Redis的五种数据类型/">Redis的五种数据类型</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/12/27/Redis的五种数据类型/" class="archive-article-date">
-        <time datetime="2019-12-27T01:50:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="五种数据类型"><a href="#五种数据类型" class="headerlink" title="五种数据类型"></a>五种数据类型</h2><h3 id="第一种类型：String-Key-Value"><a href="#第一种类型：String-Key-Value" class="headerlink" title="第一种类型：String Key-Value"></a>第一种类型：String Key-Value</h3><p>set key value  设置一个key 值为 value </p>
-<p>get key  获得key值得value<br>incr key      —对应的value 自增1,如果没有这个key值 自动给你创建创建 并赋值为1</p>
-<p>decr key     —对应的value 自减1</p>
-<h3 id="第二种类型：Hash：key-filed-value"><a href="#第二种类型：Hash：key-filed-value" class="headerlink" title="第二种类型：Hash：key-filed-value"></a>第二种类型：Hash：key-filed-value</h3><p>相当于一个Key就是一个map<br><img src="http://182.92.102.146/upload/2019/12/image-4a7b5ffe1a9642268cf19e78ad48a521.png" alt="image.png"><br>hset key filed value 设置值</p>
-<p>hget key filed 　获取值</p>
-<h3 id="第三种类型：List"><a href="#第三种类型：List" class="headerlink" title="第三种类型：List"></a>第三种类型：List</h3><p>　List 有顺序可重复</p>
-<p>　lpush list 1  2  3  4 从左添加元素　</p>
-<p>  rpush list 1 2 3 4    从右添加元素</p>
-<p>  lrange list 0 -1 (从0 到-1 元素查看：也就表示查看所有)</p>
-<p>  lpop list （从左边取，删除）</p>
-<p>  rpop list  (从右边取，删除)</p>
-<h3 id="第四种类型-：Set"><a href="#第四种类型-：Set" class="headerlink" title="第四种类型 ：Set"></a>第四种类型 ：Set</h3><p>Set 无顺序，不能重复　　　</p>
-<p>sadd set1 a b c d d (向set1中添加元素) 元素不重复</p>
-<p>smembers set1 （查询元素）</p>
-<p>srem set1 a （删除元素）</p>
-<h3 id="第五种类型：SortedSet（zset）"><a href="#第五种类型：SortedSet（zset）" class="headerlink" title="第五种类型：SortedSet（zset）"></a>第五种类型：SortedSet（zset）</h3><p>有顺序，不能重复，适合做排行榜 排序需要一个分数属性</p>
-<p>zrange zset1 0 -1 (从小到大)</p>
-<p>zrevrange zset1 0 -1 (从大到小)</p>
-<p>zincrby zset2 score member (对元素member 增加 score)</p>
-<h2 id="Key命令"><a href="#Key命令" class="headerlink" title="Key命令"></a>Key命令</h2><p>expire key second  (设置key的过期时间)</p>
-<p>ttl key (查看剩余时间)（-2 表示不存在，-1 表示已被持久化，正数表示剩余的时间）</p>
-<p>persist key (清除过期时间，也即是持久化 持久化成功体提示 1 不成功0)。</p>
-<p>del key: 删除key  </p>
-<p>select 0 表示：选择0号数据库。默认是0号数据库</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/27/Redis的五种数据类型/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1335,19 +1325,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringData</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SpringSecurity</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1359,7 +1349,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">每日算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1367,11 +1361,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">微服务</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
