@@ -6,7 +6,7 @@
   <link href="https://liuhuashen.github.io/atom.xml" rel="self"/>
   
   <link href="https://liuhuashen.github.io/"/>
-  <updated>2020-10-22T03:06:15.778Z</updated>
+  <updated>2021-03-09T01:55:14.450Z</updated>
   <id>https://liuhuashen.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>URL化及数组重排</title>
+    <link href="https://liuhuashen.github.io/2021/03/09/URL%E5%8C%96%E5%8F%8A%E6%95%B0%E7%BB%84%E9%87%8D%E6%8E%92/"/>
+    <id>https://liuhuashen.github.io/2021/03/09/URL%E5%8C%96%E5%8F%8A%E6%95%B0%E7%BB%84%E9%87%8D%E6%8E%92/</id>
+    <published>2021-03-09T01:48:44.000Z</published>
+    <updated>2021-03-09T01:55:14.450Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://leetcode-cn.com/problems/string-to-url-lcci/" target="_blank" rel="noopener">URL化</a></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">replaceSpaces</span><span class="params">(String S, <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">        StringBuilder sb=<span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">            <span class="keyword">char</span> c=S.charAt(i);</span><br><span class="line">            <span class="keyword">if</span>(c==<span class="string">' '</span>)&#123;</span><br><span class="line">              sb.append(<span class="string">"%20"</span>);</span><br><span class="line">              <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                sb.append(c);</span><br><span class="line">            &#125;</span><br><span class="line">     &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><a href="https://leetcode-cn.com/problems/shuffle-string/" target="_blank" rel="noopener">重新排列字符串</a></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">restoreString</span><span class="params">(String s, <span class="keyword">int</span>[] indices)</span> </span>&#123;</span><br><span class="line">      StringBuilder sb=<span class="keyword">new</span> StringBuilder(s);</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;indices.length;i++)&#123;</span><br><span class="line">        sb.setCharAt(indices[i],s.charAt(i));</span><br><span class="line">      &#125;</span><br><span class="line">      String ans=<span class="keyword">new</span> String(sb);</span><br><span class="line">      <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/string-to-url-lcci/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;URL化&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="每日算法" scheme="https://LiuHuAshen.github.io/tags/每日算法/"/>
+    
+  </entry>
   
   <entry>
     <title>leetcode题解——数学‘</title>
@@ -538,31 +561,6 @@
     
     
     <category term="RabbitMq" scheme="https://LiuHuAshen.github.io/tags/RabbitMq/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用docker安装RabbitMQ</title>
-    <link href="https://liuhuashen.github.io/2019/12/27/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85RabbitMQ/"/>
-    <id>https://liuhuashen.github.io/2019/12/27/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85RabbitMQ/</id>
-    <published>2019-12-27T01:38:04.000Z</published>
-    <updated>2019-12-27T01:38:36.428Z</updated>
-    
-    <content type="html"><![CDATA[<p>1、拉取</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull rabbitmq:3.7.7-management</span><br></pre></td></tr></table></figure><p>2、运行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 5672:5672 -p 15672:15672 --name myRabbitmq eca20a565219</span><br></pre></td></tr></table></figure><p>其中5672为主机的5672映射到docker容器的5672,15672为管理界面到web页面的端口</p><p>在客户端访问<br>主机：15672，登录账号和密码默认为guest。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;1、拉取&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;p</summary>
-      
-    
-    
-    
-    
-    <category term="RabbitMq" scheme="https://LiuHuAshen.github.io/tags/RabbitMq/"/>
-    
-    <category term="docker" scheme="https://LiuHuAshen.github.io/tags/docker/"/>
     
   </entry>
   
