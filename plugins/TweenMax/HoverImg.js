@@ -1,1 +1,183 @@
-var _createClass=function(){function a(e,t){for(var n=0;n<t.length;n++){var a=t[n];a.enumerable=a.enumerable||!1,a.configurable=!0,"value"in a&&(a.writable=!0),Object.defineProperty(e,a.key,a)}}return function(e,t,n){return t&&a(e.prototype,t),n&&a(e,n),e}}();function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var getMousePos=function(e){var t=0,n=0;return(e=e||window.event).pageX||e.pageY?(t=e.pageX,n=e.pageY):(e.clientX||e.clientY)&&(t=e.clientX+document.body.scrollLeft+document.documentElement.scrollLeft,n=e.clientY+document.body.scrollTop+document.documentElement.scrollTop),{x:t,y:n}},getRandomFloat=function(e,t){(Math.random()*(t-e)+e).toFixed(2)},HoverImgFx1=function(){function t(e){_classCallCheck(this,t),this.DOM={el:e},this.DOM.reveal=document.createElement("div"),this.DOM.reveal.className="hover-reveal",this.DOM.reveal.style.overflow="hidden",this.DOM.reveal.innerHTML='<div class="hover-reveal__inner"><div class="hover-reveal__img" style="background-image:url('+this.DOM.el.dataset.img+')"></div></div>',this.DOM.el.appendChild(this.DOM.reveal),this.DOM.revealInner=this.DOM.reveal.querySelector(".hover-reveal__inner"),this.DOM.revealInner.style.overflow="hidden",this.DOM.revealImg=this.DOM.revealInner.querySelector(".hover-reveal__img"),this.DOM.letters=Array.from(this.DOM.el.querySelectorAll("span")),this.initEvents()}return _createClass(t,[{key:"initEvents",value:function(){var i=this;this.positionElement=function(e){var t=getMousePos(e),n=document.body.scrollLeft+document.documentElement.scrollLeft,a=document.body.scrollTop+document.documentElement.scrollTop;i.DOM.reveal.style.top=t.y-220-a+"px",i.DOM.reveal.style.left=t.x+1-n+"px"},this.mouseenterFn=function(e){i.positionElement(e),i.showImage(),i.animateLetters()},this.mousemoveFn=function(e){return requestAnimationFrame(function(){i.positionElement(e)})},this.mouseleaveFn=function(){i.hideImage()},this.DOM.el.addEventListener("mouseenter",this.mouseenterFn),this.DOM.el.addEventListener("mousemove",this.mousemoveFn),this.DOM.el.addEventListener("mouseleave",this.mouseleaveFn)}},{key:"showImage",value:function(){var e=this;TweenMax.killTweensOf(this.DOM.revealInner),TweenMax.killTweensOf(this.DOM.revealImg),this.tl=new TimelineMax({onStart:function(){e.DOM.reveal.style.opacity=1,TweenMax.set(e.DOM.el,{zIndex:1e3})}}).add("begin").set([this.DOM.revealInner,this.DOM.revealImg],{transformOrigin:"50% 100%"}).add(new TweenMax(this.DOM.revealInner,.4,{ease:Expo.easeOut,startAt:{x:"50%",y:"120%",rotation:50},x:"0%",y:"0%",rotation:0}),"begin").add(new TweenMax(this.DOM.revealImg,.4,{ease:Expo.easeOut,startAt:{x:"-50%",y:"-120%",rotation:-50},x:"0%",y:"0%",rotation:0}),"begin").add(new TweenMax(this.DOM.revealImg,.7,{ease:Expo.easeOut,startAt:{scale:2},scale:1}),"begin")}},{key:"hideImage",value:function(){var e=this;TweenMax.killTweensOf(this.DOM.revealInner),TweenMax.killTweensOf(this.DOM.revealImg),this.tl=new TimelineMax({onStart:function(){TweenMax.set(e.DOM.el,{zIndex:999})},onComplete:function(){TweenMax.set(e.DOM.el,{zIndex:""}),TweenMax.set(e.DOM.reveal,{opacity:0})}}).add("begin").add(new TweenMax(this.DOM.revealInner,.6,{ease:Expo.easeOut,y:"-120%",rotation:-5}),"begin").add(new TweenMax(this.DOM.revealImg,.6,{ease:Expo.easeOut,y:"120%",rotation:5,scale:1.2}),"begin")}},{key:"animateLetters",value:function(){this.DOM.letters.forEach(function(e,t){TweenMax.set(e,{opacity:0});var n=2*t/100;TweenMax.to(e,.07*t+.2,{ease:Expo.easeOut,delay:n,startAt:{x:"100%"},x:"0%",opacity:1})})}}]),t}();function isImageType(e){return/\.(gif|jpg|jpeg|png)$/i.test(e)}
+/**
+ * HoverImg.js
+ * http://www.codrops.com
+ *
+ * Licensed under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * Copyright 2019, JoeyBling
+ */
+// from http://www.quirksmode.org/js/events_properties.html#position
+const getMousePos = function (e) {
+  let posx = 0;
+  let posy = 0;
+  if (!e) e = window.event;
+  if (e.pageX || e.pageY) {
+    posx = e.pageX;
+    posy = e.pageY;
+  } else if (e.clientX || e.clientY) {
+    posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+    posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+  }
+  return {
+    x: posx,
+    y: posy
+  }
+}
+
+// Generate a random float.
+const getRandomFloat = function (min, max) {
+  (Math.random() * (max - min) + min).toFixed(2)
+};
+
+/**
+ * One class per effect. 
+ * Lots of code is repeated, so that single effects can be easily used. 
+ */
+
+// Effect 1
+class HoverImgFx1 {
+  constructor(el) {
+    this.DOM = {
+      el: el
+    };
+    this.DOM.reveal = document.createElement('div');
+    this.DOM.reveal.className = 'hover-reveal';
+    this.DOM.reveal.style.overflow = 'hidden';
+    this.DOM.reveal.innerHTML = `<div class="hover-reveal__inner"><div class="hover-reveal__img" style="background-image:url(${this.DOM.el.dataset.img})"></div></div>`;
+    this.DOM.el.appendChild(this.DOM.reveal);
+    this.DOM.revealInner = this.DOM.reveal.querySelector('.hover-reveal__inner');
+    this.DOM.revealInner.style.overflow = 'hidden';
+    this.DOM.revealImg = this.DOM.revealInner.querySelector('.hover-reveal__img');
+    this.DOM.letters = Array.from(this.DOM.el.querySelectorAll('span'));
+    this.initEvents();
+  }
+  initEvents() {
+    this.positionElement = (ev) => {
+      const mousePos = getMousePos(ev);
+      const docScrolls = {
+        left: document.body.scrollLeft + document.documentElement.scrollLeft,
+        top: document.body.scrollTop + document.documentElement.scrollTop
+      };
+      this.DOM.reveal.style.top = `${mousePos.y-220-docScrolls.top}px`;
+      this.DOM.reveal.style.left = `${mousePos.x+1-docScrolls.left}px`;
+    };
+    this.mouseenterFn = (ev) => {
+      this.positionElement(ev);
+      this.showImage();
+      this.animateLetters();
+    };
+    this.mousemoveFn = ev => requestAnimationFrame(() => {
+      this.positionElement(ev);
+    });
+    this.mouseleaveFn = () => {
+      this.hideImage();
+    };
+
+    this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
+    this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
+    this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
+  }
+  showImage() {
+    TweenMax.killTweensOf(this.DOM.revealInner);
+    TweenMax.killTweensOf(this.DOM.revealImg);
+
+    this.tl = new TimelineMax({
+        onStart: () => {
+          this.DOM.reveal.style.opacity = 1;
+          TweenMax.set(this.DOM.el, {
+            zIndex: 1000
+          });
+        }
+      })
+      .add('begin')
+      .set([this.DOM.revealInner, this.DOM.revealImg], {
+        transformOrigin: '50% 100%'
+      })
+      .add(new TweenMax(this.DOM.revealInner, 0.4, {
+        ease: Expo.easeOut,
+        startAt: {
+          x: '50%',
+          y: '120%',
+          rotation: 50
+        },
+        x: '0%',
+        y: '0%',
+        rotation: 0
+      }), 'begin')
+      .add(new TweenMax(this.DOM.revealImg, 0.4, {
+        ease: Expo.easeOut,
+        startAt: {
+          x: '-50%',
+          y: '-120%',
+          rotation: -50
+        },
+        x: '0%',
+        y: '0%',
+        rotation: 0
+      }), 'begin')
+      .add(new TweenMax(this.DOM.revealImg, 0.7, {
+        ease: Expo.easeOut,
+        startAt: {
+          scale: 2
+        },
+        scale: 1
+      }), 'begin');
+  }
+  hideImage() {
+    TweenMax.killTweensOf(this.DOM.revealInner);
+    TweenMax.killTweensOf(this.DOM.revealImg);
+
+    this.tl = new TimelineMax({
+        onStart: () => {
+          TweenMax.set(this.DOM.el, {
+            zIndex: 999
+          });
+        },
+        onComplete: () => {
+          TweenMax.set(this.DOM.el, {
+            zIndex: ''
+          });
+          TweenMax.set(this.DOM.reveal, {
+            opacity: 0
+          });
+        }
+      })
+      .add('begin')
+      //.set([this.DOM.revealInner, this.DOM.revealImg], {transformOrigin: '50% 0%'})
+      .add(new TweenMax(this.DOM.revealInner, 0.6, {
+        ease: Expo.easeOut,
+        y: '-120%',
+        rotation: -5
+      }), 'begin')
+      .add(new TweenMax(this.DOM.revealImg, 0.6, {
+        ease: Expo.easeOut,
+        y: '120%',
+        rotation: 5,
+        scale: 1.2
+      }), 'begin')
+  }
+  animateLetters() {
+    this.DOM.letters.forEach((letter, pos) => {
+      TweenMax.set(letter, {
+        opacity: 0
+      });
+      const delay = pos * 2 / 100;
+      TweenMax.to(letter, pos * 0.07 + 0.2, {
+        ease: Expo.easeOut,
+        delay: delay,
+        startAt: {
+          x: '100%'
+        },
+        x: '0%',
+        opacity: 1
+      });
+    });
+  }
+}
+
+
+// 判断字符串是否是图片格式类型
+function isImageType(typeStr) {
+  return /\.(gif|jpg|jpeg|png)$/i.test(typeStr);
+}
